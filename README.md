@@ -2,6 +2,10 @@
 
 Eine Sammlung verschiedener Erweiterungsmodulvorlagen
 
+Die Anregung für die Vorlagen stammen aus dem etwas älteren 
+[GitHub-Repository **VBNetSnippets** von **ElektroStudios**](https://github.com/ElektroStudios/VBNetSnippets)
+
+
 ---
 
 Folgende Erweiterungsvorlagen sind enthalten:
