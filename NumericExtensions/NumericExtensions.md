@@ -2,9 +2,7 @@
 ## NumericExtensions
 
 Diese Vorlage enthält benutzerdefinierte Erweiterungsmethoden zur Verwendung mit den 
-Datentypen System.Int16, System.UInt16, System.Int32, System.UInt32, System.Int64, 
-System.UInt64, System.Decimal, System.Single und System.Double.
-
+Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Double.
 
 Die Anregung für diese und weitere Vorlagen stammen aus dem etwas älteren 
 [GitHub-Repository **VBNetSnippets** von **ElektroStudios**](https://github.com/ElektroStudios/VBNetSnippets)
