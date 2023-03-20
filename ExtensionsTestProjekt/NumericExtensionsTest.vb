@@ -7,7 +7,7 @@
 
 
 Imports ExtensionsTestProjekt.Extensions
-Imports Microsoft.VisualStudio.TestTools.UnitTesting
+
 
 <TestClass()>
 Public Class NumericExtensionsTest
@@ -19,7 +19,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Konvertiert einen Wert in seine literale hexadezimale C#-Darstellung.
 	''' </remarks>
-	<TestMethod> Public Sub ToCSharpHex_TestMethod()
+	<TestMethod()>
+	Public Sub ToCSharpHex_TestMethod()
 
 		Dim var As Double = 100
 
@@ -50,7 +51,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Konvertiert einen Wert in seine literale hexadezimale Visual Basic-Darstellung.
 	''' </remarks>
-	<TestMethod> Public Sub ToVBHex_TestMethod()
+	<TestMethod()>
+	Public Sub ToVBHex_TestMethod()
 
 		Dim var As Double = 100
 
@@ -81,7 +83,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Die Differenz zwischen dem Wert und "Value" bestimmen.
 	''' </remarks>
-	<TestMethod> Public Sub DifferenceOf_TestMethod()
+	<TestMethod()>
+	Public Sub DifferenceOf_TestMethod()
 
 		Dim var() As Double = {5, 0}
 
@@ -116,7 +119,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Bestimmt, ob der Wert im Bereich der angegebenen min- und max-Werte liegt.
 	''' </remarks>
-	<TestMethod> Public Sub IsInRangeOf_TestMethod()
+	<TestMethod()>
+	Public Sub IsInRangeOf_TestMethod()
 
 		Dim var() As Double = {4, 7, 0}
 
@@ -151,7 +155,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Bestimmt, ob der Wert ein vielfaches von value ist.
 	''' </remarks>
-	<TestMethod> Public Sub IsMultipleOf_TestMethod()
+	<TestMethod()>
+	Public Sub IsMultipleOf_TestMethod()
 
 		Dim var() As Double = {3, 0}
 
@@ -187,7 +192,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Bestimmt, Wert durch den angegebenen Wert teilbar ist (ohne Rest).
 	''' </remarks>
-	<TestMethod> Public Sub IsDivisibleBy_TestMethod()
+	<TestMethod()>
+	Public Sub IsDivisibleBy_TestMethod()
 
 		Dim var() As Double = {10, 1}
 
@@ -222,7 +228,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Bestimmt, ob der Wert eine Primzahl ist.
 	''' </remarks>
-	<TestMethod> Public Sub IsPrime_TestMethod()
+	<TestMethod()>
+	Public Sub IsPrime_TestMethod()
 
 		Dim var As Double = 1
 
@@ -253,7 +260,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Bestimmt, ob der Wert negativ ist.
 	''' </remarks>
-	<TestMethod> Public Sub IsNegative_TestMethod()
+	<TestMethod()>
+	Public Sub IsNegative_TestMethod()
 
 		Dim var As Double = 3
 
@@ -286,7 +294,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Bestimmt, ob ein Wert positiv ist.
 	''' </remarks>
-	<TestMethod> Public Sub IsPositive_TestMethod()
+	<TestMethod()>
+	Public Sub IsPositive_TestMethod()
 
 		Dim var As Double = 3
 
@@ -318,7 +327,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Berechnet den Bruchteil eines Wertes in Prozent.
 	''' </remarks>
-	<TestMethod()> Public Sub FractionBy_TestMethod()
+	<TestMethod()>
+	Public Sub FractionBy_TestMethod()
 
 		Dim var() As Double = {150, 1}
 
@@ -353,7 +363,8 @@ Public Class NumericExtensionsTest
 	''' <remarks>
 	''' Berechnet den Prozentsatz eines Wertes von einem gegebenen Gesamtwert.
 	''' </remarks>
-	<TestMethod()> Public Sub PercentOf_TestMethod()
+	<TestMethod()>
+	Public Sub PercentOf_TestMethod()
 
 		Dim var() As Double = {100, 50}
 

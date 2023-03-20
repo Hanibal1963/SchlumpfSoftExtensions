@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>NumericExtensions</Name>
-    <Description>
-		Diese Vorlage enthält benutzerdefinierte Erweiterungsmethoden zur Verwendung mit den Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Double.
-	</Description>
-    <Icon>NumericExtensions.ico</Icon>
-    <TemplateID>1a07e791-e692-43a7-a760-e0827dca5d6f</TemplateID>
+    <Name>GenericExtensions</Name>
+    <Description>GenericExtensions</Description>
+    <Icon>GenericExtensions.ico</Icon>
+    <TemplateID>29516cb6-e9f4-48e9-ab6d-0623e0dbb0d2</TemplateID>
     <SortOrder>1000</SortOrder>
-    <DefaultName>NumericExtensions.vb</DefaultName>
+    <DefaultName>GenericExtensions.vb</DefaultName>
     <ProjectType>VisualBasic</ProjectType>
     <RequiredFrameworkVersion>4.7.2</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
@@ -19,6 +17,6 @@
         <Assembly>System</Assembly>
       </Reference>
     </References>
-    <ProjectItem ReplaceParameters="false">NumericExtensions.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="false">GenericExtensions.vb</ProjectItem>
   </TemplateContent>
 </VSTemplate>

@@ -4,7 +4,9 @@
         <Identity Id="SchlumpfSoftExtensions.56aca1cc-307d-4e0d-8faf-a835e6635e3e" Version="1.0.2023" Language="de-DE" Publisher="Andreas Sauer" />
         <DisplayName>SchlumpfSoftExtensions</DisplayName>
         <Description xml:space="preserve">Eine Sammlung verschiedener Erweiterungsmodulvorlagen.</Description>
+        <MoreInfo>https://github.com/Hanibal1963/SchlumpfSoftExtensions</MoreInfo>
         <License>LICENSE.txt</License>
+        <ReleaseNotes>ReleaseNotes.txt</ReleaseNotes>
         <Icon>PapaSchlumpf.ico</Icon>
         <Tags>Vorlage Extension VisualBasic</Tags>
         <Preview>true</Preview>
