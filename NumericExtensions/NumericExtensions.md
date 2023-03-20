@@ -4,9 +4,6 @@
 Diese Vorlage enthält benutzerdefinierte Erweiterungsmethoden zur Verwendung mit den 
 Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Double.
 
-Die Anregung für diese und weitere Vorlagen stammen aus dem etwas älteren 
-[GitHub-Repository **VBNetSnippets** von **ElektroStudios**](https://github.com/ElektroStudios/VBNetSnippets)
-
 
 ---
 
