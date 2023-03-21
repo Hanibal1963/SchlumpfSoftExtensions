@@ -83,6 +83,8 @@ result = String.Join(" ,", var.FindExact(var.Last, StringComparison.Ordinal))
 Debug.Print("Es wurde ""{0}"" gefunden.", result)
 ```
 
+---
+
 
 ### Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
 

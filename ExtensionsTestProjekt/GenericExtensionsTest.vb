@@ -25,7 +25,6 @@ Public Class GenericExtensionsTest
 
 		Debug.Print("*** IEnumerable(Of String).FindByLike() Funktionstest ***" & vbCrLf)
 
-
 		Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
 		Dim result As String
 
