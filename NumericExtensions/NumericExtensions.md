@@ -19,7 +19,7 @@ Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Doub
 - [Bestimmen ob ein angegebener Wert ein vielfaches vom Wert ist](NumericExtensions.md#Bestimmen-ob-ein-angegebener-Wert-ein-vielfaches-vom-Wert-ist)
 - [Die Differenz zwischen dem Wert und einem angegebenen Wert bestimmen](NumericExtensions.md#Die-Differenz-zwischen-dem-Wert-und-einem-angegebenen-Wert-bestimmen)
 - [Den Wert in die Hexadezimale Darstellung für Visual Basic konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-Visual-Basic-konvertieren)
-- [Den Wert in die Hexadezimale Darstellung für C# konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-C#-konvertieren)
+- [Den Wert in die Hexadezimale Darstellung für C# konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-C-konvertieren)
 - [Den Wert in Abhängigkeit von der Genauigkeit und der Kultur formatieren](NumericExtensions.md#Den-Wert-in-Abhängigkeit-von-der-Genauigkeit-und-der-Kultur-formatieren)
 
 
