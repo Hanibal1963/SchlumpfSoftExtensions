@@ -13,6 +13,7 @@ Option Infer On
 
 Namespace Extensions
 
+
 	''' <summary>
 	''' Enthält benutzerdefinierte Erweiterungsmethoden zur Verwendung mit den Datentypen
 	''' <see cref="Short"/>, <see cref="UShort"/>, <see cref="Integer"/>, <see cref="UInteger"/>, 

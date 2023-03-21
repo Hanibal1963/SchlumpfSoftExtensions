@@ -1,79 +1,49 @@
-﻿
+﻿'
+'****************************************************************************************************************
+'GenericExtensions.vb
+'(c) 2023 by Andreas Sauer
+'****************************************************************************************************************
+'
+
 
 Option Strict On
 Option Explicit On
 Option Infer Off
 
 
-
-Imports System
-Imports System.Collections.Generic
-Imports System.Diagnostics
-Imports System.Linq
-Imports System.Runtime.CompilerServices
-Imports System.Text
-Imports System.Text.RegularExpressions
-
-
-
 Namespace Extensions
 
 
-
-
+	''' <summary>
+	''' Enthält verschiedene Erweiterungsmethoden für Arrays, Byte(), IEnumerable(Of Byte), 
+	''' IEnumerable(Of String) und IEnumerable(Of T)
+	''' </summary>
 	Public Module GenericExtensions
 
 
+		Private Const ARGUMENT_OUT_OF_RANGE_EXCEPTION_MESSAGE As String =
+			"Der Wert des Argumentes {0} liegt ausserhalb des gültigen Bereiches."
 
 
+#Region "Die Elementanzahl eines Arrays ändern"
 
-
-
-
-
-
-
-
-		''' ----------------------------------------------------------------------------------------------------
 		''' <summary>
-		''' Resizes the number of elements of the source <see cref="Array"/>.
+		''' Ändert die Anzahl der Elemente eines <see cref="Array"/>.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim myArray(50) As Integer
-		''' Console.WriteLine(String.Format("{0,-12}: {1}", "Initial Size", myArray.Length))
-		''' 
-		''' myArray = myArray.Resize(myArray.Length - 51)
-		''' Console.WriteLine(String.Format("{0,-12}: {1}", "New Size", myArray.Length))
-		''' </code>
-		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <typeparam name="T">
-		''' The array <see cref="Type"/>.
-		''' </typeparam>
-		''' 
-		''' <param name="sender">
-		''' The source <see cref="Array"/>.
-		''' </param>
-		''' 
 		''' <param name="newSize">
-		''' The new size.
+		''' Die neue Größe des <see cref="Array"/>.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
-		''' The resized <see cref="Array"/>.
+		''' Das in der Größe geänderte <see cref="Array"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <exception cref="ArgumentOutOfRangeException">
-		''' newSize;Value greater than 0 is required.
+		''' Wird ausgelöst wenn der Wert kleiner oder gleich 0 ist.
 		''' </exception>
-		''' ----------------------------------------------------------------------------------------------------
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
+		<Diagnostics.DebuggerStepThrough>
+		<Runtime.CompilerServices.Extension>
 		Public Function Resize(Of T)(sender As T(), newSize As Integer) As T()
 			If newSize <= 0 Then
-				Throw New System.ArgumentOutOfRangeException(paramName:=NameOf(newSize), message:="Wert größer als 0 ist erforderlich.")
+				Throw New ArgumentOutOfRangeException(String.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION_MESSAGE, NameOf(newSize)))
 			End If
 			Dim preserveLength As Integer = Math.Min(sender.Length, newSize)
 			If preserveLength > 0 Then
@@ -85,148 +55,96 @@ Namespace Extensions
 			End If
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+#End Region
+
+
+#Region "Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren"
+
+
 		''' <summary>
-		''' Converts a byte sequence to its String representation using the specified character <see cref="Encoding"/>.
+		''' Konvertiert eine Byte-Folge (<see cref="Byte()"/>) in ihre String-Darstellung unter Verwendung 
+		''' der angegebenen Zeichencodierung (<see cref="system.Text.Encoding"/>).
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <example> This is a code example.
-		''' <code>
-		''' MessageBox.Show(New Byte() {84, 101, 115, 116}.ToString(Encoding.Default))
-		''' </code>
-		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <param name="sender">
-		''' The source <see cref="Array"/>.
-		''' </param>
-		''' 
 		''' <param name="encoding">
-		''' The character <see cref="Encoding"/> to decode the bytes.
+		''' Die Zeichencodierung <see cref="system.Text.Encoding"/> zum Decodieren der Bytes.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
-		''' The String representation.
+		''' Die String-Darstellung.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function ToString(ByVal sender As IEnumerable(Of Byte),
-								 ByVal encoding As Encoding) As String
-
-			Return ToString(sender.ToArray, encoding)
-
-		End Function
-
-		''' ----------------------------------------------------------------------------------------------------
-		''' <summary>
-		''' Converts a byte sequence to its String representation using the specified character <see cref="Encoding"/>.
-		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <example> This is a code example.
-		''' <code>
-		''' MessageBox.Show(New Byte() {84, 101, 115, 116}.ToString(Encoding.Default))
-		''' </code>
-		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <param name="sender">
-		''' The source <see cref="Array"/>.
-		''' </param>
-		''' 
-		''' <param name="encoding">
-		''' The character <see cref="Encoding"/> to decode the bytes.
-		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <returns>
-		''' The String representation.
-		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function ToString(ByVal sender As Byte(),
-								 ByVal encoding As Encoding) As String
-
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function ToString(sender As Byte(), encoding As System.Text.Encoding) As String
 			If encoding Is Nothing Then
 				encoding = System.Text.Encoding.Default
 			End If
-
 			Return encoding.GetString(sender)
-
 		End Function
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		''' ----------------------------------------------------------------------------------------------------
 		''' <summary>
-		''' Counts the empty items of an <see cref="IEnumerable(Of String)"/>.
+		''' Konvertiert eine Byte-Folge (<see cref="IEnumerable(Of Byte)"/>) in ihre String-Darstellung unter Verwendung 
+		''' der angegebenen Zeichencodierung (<see cref="system.Text.Encoding"/>).
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim emptyLinesCount As Integer = {"Hello", "   ", "World!"}.CountEmptyItems
-		''' </code>
-		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <param name="sender">
-		''' The source <see cref="IEnumerable(Of String)"/>.
+		''' <param name="encoding">
+		''' Die Zeichencodierung <see cref="system.Text.Encoding"/> zum Decodieren der Bytes.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
-		''' The total amount of empty items.
+		''' Die String-Darstellung.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function CountEmptyItems(ByVal sender As IEnumerable(Of String)) As Integer
-
-			Return (From str As String In sender
-					Where String.IsNullOrEmpty(str) OrElse
-					  String.IsNullOrWhiteSpace(str)).Count
-
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function ToString(sender As IEnumerable(Of Byte), encoding As System.Text.Encoding) As String
+			Return ToString(sender.ToArray, encoding)
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+#End Region
+
+
+#Region "Erweiterungsmethoden für IEnumerable(Of String)"
+
+
 		''' <summary>
-		''' Counts the non-empty items of an <see cref="IEnumerable(Of String)"/>.
+		''' Zählt die leeren Elemente eines <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim nonEmptyLinesCount As Integer = {"Hello", "   ", "World!"}.CountNonEmptyItems
-		''' </code>
-		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
-		''' <param name="sender">
-		''' The source <see cref="IEnumerable(Of String)"/>.
-		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
-		''' The total amount of non-empty items.
+		''' Die Anzahl der leeren Elemente.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function CountNonEmptyItems(ByVal sender As IEnumerable(Of String)) As Integer
-
-			Return (From str As String In sender
-					Where Not String.IsNullOrEmpty(str) AndAlso
-					  Not String.IsNullOrWhiteSpace(str)).Count
-
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function CountEmptyItems(sender As IEnumerable(Of String)) As Integer
+			Dim result As Integer = 0
+			For Each str As String In sender
+				If String.IsNullOrEmpty(str) OrElse String.IsNullOrWhiteSpace(str) Then
+					result += 1
+				End If
+			Next
+			Return result
 		End Function
+
+
+		''' <summary>
+		''' Zählt die nicht leeren Elemente eines <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <returns>
+		''' Die anzahl der nicht leeren Elemente.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function CountNonEmptyItems(sender As IEnumerable(Of String)) As Integer
+			'Return (From str As String In sender Where Not String.IsNullOrEmpty(str) AndAlso Not String.IsNullOrWhiteSpace(str)).Count
+			Dim result As Integer = 0
+			For Each str As String In sender
+				If Not String.IsNullOrEmpty(str) AndAlso Not String.IsNullOrWhiteSpace(str) Then
+					result += 1
+				End If
+			Next
+			Return result
+		End Function
+
+
+
+
 
 		''' ----------------------------------------------------------------------------------------------------
 		''' <summary>
@@ -248,18 +166,17 @@ Namespace Extensions
 		''' <see cref="IEnumerable(Of T)"/>.
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function BubbleSort(ByVal sender As IEnumerable(Of String)) As IEnumerable(Of String)
-
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function BubbleSort(sender As IEnumerable(Of String)) As IEnumerable(Of String)
 			Return sender.Select(Function(value As String)
 
 									 Return New With
 											{
 											   Key .OrgStr = value,
 											   Key .SortStr =
-													Regex.Replace(value, "(\d+)|(\D+)",
-													 Function(match As Match)
+													System.Text.RegularExpressions.Regex.Replace(value, "(\d+)|(\D+)",
+													 Function(match As System.Text.RegularExpressions.Match)
 														 Return match.Value.PadLeft(sender.Select(Function(str As String)
 																									  Return str.Length
 																								  End Function).Max,
@@ -272,81 +189,73 @@ Namespace Extensions
 								 End Function).
 							 OrderBy(Function(anon) anon.SortStr).
 							 Select(Function(anon) anon.OrgStr)
-
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+
+
 		''' <summary>
-		''' Finds the elements that are equals to the specified string on the source <see cref="IEnumerable(Of String)"/>.
+		''' Findet die Elemente, die gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <example> This is a code example.
 		''' <code>
 		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
 		''' Debug.WriteLine(String.Join(", ", col.FindExact(searchString:="a", stringComparison:=StringComparison.OrdinalIgnoreCase)))
 		''' </code>
 		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <param name="sender">
 		''' The source collections.
 		''' </param>
-		''' 
 		''' <param name="searchString">
 		''' The string to search for.
 		''' </param>
-		''' 
 		''' <param name="stringComparison">
 		''' The string comparison rule.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
 		''' <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function FindExact(ByVal sender As IEnumerable(Of String),
-							  ByVal searchString As String,
-							  ByVal stringComparison As StringComparison) As IEnumerable(Of String)
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindExact(sender As IEnumerable(Of String),
+searchString As String,
+stringComparison As StringComparison) As IEnumerable(Of String)
 
 			Return From value As String In sender
 				   Where value.Equals(searchString, stringComparison)
 
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+
+
+
 		''' <summary>
-		''' Finds the elements that contains the specified string on the source <see cref="IEnumerable(Of String)"/>.
+		''' Findet die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <example> This is a code example.
 		''' <code>
 		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
 		''' Debug.WriteLine(String.Join(", ", col.FindByContains(searchString:="World", ignoreCase:=True)))
 		''' </code>
 		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <param name="sender">
 		''' The source collections.
 		''' </param>
-		''' 
 		''' <param name="searchString">
 		''' The string to search for.
 		''' </param>
-		''' 
 		''' <param name="ignoreCase">
 		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
 		''' <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function FindByContains(ByVal sender As IEnumerable(Of String),
-								   ByVal searchString As String,
-								   ByVal ignoreCase As Boolean) As IEnumerable(Of String)
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindByContains(sender As IEnumerable(Of String),
+searchString As String,
+ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Return From value As String In sender
 				   Where If(ignoreCase,
@@ -355,39 +264,36 @@ Namespace Extensions
 
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+
+
+
 		''' <summary>
-		''' Performs a String-Like pattern search on the source <see cref="IEnumerable(Of String)"/> and returns all the matches.
+		''' Führt eine zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und gibt alle Übereinstimmungen zurück.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <example> This is a code example.
 		''' <code>
 		''' Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
 		''' Debug.WriteLine(String.Join(", ", col.FindByLike(likePattern:="*hello*", ignoreCase:=True)))
 		''' </code>
 		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <param name="sender">
 		''' The source collections.
 		''' </param>
-		''' 
 		''' <param name="likePattern">
 		''' The pattern comparison to use with the <see langword="Like"/> operator.
 		''' </param>
-		''' 
 		''' <param name="ignoreCase">
 		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
 		''' <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function FindByLike(ByVal sender As IEnumerable(Of String),
-							   ByVal likePattern As String,
-							   ByVal ignoreCase As Boolean) As IEnumerable(Of String)
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindByLike(sender As IEnumerable(Of String),
+likePattern As String,
+ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Return From value As String In sender
 				   Where If(ignoreCase,
@@ -396,78 +302,72 @@ Namespace Extensions
 
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+
+
+
 		''' <summary>
-		''' Removes the elements that are equals to the specified string on the source <see cref="IEnumerable(Of String)"/>.
+		''' Entfernt die Elemente, die gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <example> This is a code example.
 		''' <code>
 		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
 		''' Debug.WriteLine(String.Join(", ", col.RemoveExact(searchString:="Hello", ignoreCase:=True)))
 		''' </code>
 		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <param name="sender">
 		''' The source collections.
 		''' </param>
-		''' 
 		''' <param name="searchString">
 		''' The string to search for.
 		''' </param>
-		''' 
 		''' <param name="stringComparison">
 		''' The string comparison rule.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
 		''' <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function RemoveExact(ByVal sender As IEnumerable(Of String),
-								ByVal searchString As String,
-								ByVal stringComparison As StringComparison) As IEnumerable(Of String)
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveExact(sender As IEnumerable(Of String),
+searchString As String,
+stringComparison As StringComparison) As IEnumerable(Of String)
 
 			Return From value As String In sender
 				   Where Not value.Equals(searchString, stringComparison)
 
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+
+
+
 		''' <summary>
-		''' Removes the elements that contains the specified string on the source <see cref="IEnumerable(Of String)"/>.
+		''' Entfernt die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <example> This is a code example.
 		''' <code>
 		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
 		''' Debug.WriteLine(String.Join(", ", col.RemoveByContains(searchString:="Hello", ignoreCase:=True)))
 		''' </code>
 		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <param name="sender">
 		''' The source collections.
 		''' </param>
-		''' 
 		''' <param name="searchString">
 		''' The string to search for.
 		''' </param>
-		''' 
 		''' <param name="ignoreCase">
 		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
 		''' <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function RemoveByContains(ByVal sender As IEnumerable(Of String),
-									 ByVal searchString As String,
-									 ByVal ignoreCase As Boolean) As IEnumerable(Of String)
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveByContains(sender As IEnumerable(Of String),
+searchString As String,
+ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Return From value As String In sender
 				   Where If(ignoreCase,
@@ -476,39 +376,35 @@ Namespace Extensions
 
 		End Function
 
-		''' ----------------------------------------------------------------------------------------------------
+
+
+
 		''' <summary>
-		''' Performs a String-Like pattern search on the source <see cref="IEnumerable(Of String)"/> and removes all the matches.
+		''' Führt eine zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und entfernt alle Übereinstimmungen.
 		''' </summary>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <example> This is a code example.
 		''' <code>
 		''' Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
 		''' Debug.WriteLine(String.Join(", ", col.RemoveByLike(likePattern:="*hello*", ignoreCase:=True)))
 		''' </code>
 		''' </example>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <param name="sender">
 		''' The source collections.
 		''' </param>
-		''' 
 		''' <param name="likePattern">
 		''' The pattern comparison to use with the <see langword="Like"/> operator.
 		''' </param>
-		''' 
 		''' <param name="ignoreCase">
 		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
 		''' </param>
-		''' ----------------------------------------------------------------------------------------------------
 		''' <returns>
 		''' <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
-		''' ----------------------------------------------------------------------------------------------------
-		<DebuggerStepThrough>
-		<Extension>
-		Public Function RemoveByLike(ByVal sender As IEnumerable(Of String),
-								 ByVal likePattern As String,
-								 ByVal ignoreCase As Boolean) As IEnumerable(Of String)
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveByLike(sender As IEnumerable(Of String),
+likePattern As String,
+ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Return From value As String In sender
 				   Where If(ignoreCase,
@@ -518,15 +414,13 @@ Namespace Extensions
 		End Function
 
 
+#End Region
 
 
+#Region ""
 
 
-
-
-
-
-
+		'TODO: bearbeiten 3
 
 
 
@@ -556,8 +450,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function Duplicates(Of T)(ByVal sender As IEnumerable(Of T)) As IEnumerable(Of T)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Duplicates(Of T)(sender As IEnumerable(Of T)) As IEnumerable(Of T)
 
 			Return sender.GroupBy(Function(value As T) value).
 						  Where(Function(group As IGrouping(Of T, T)) group.Count > 1).
@@ -589,8 +483,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function UniqueDuplicates(Of T)(ByVal sender As IEnumerable(Of T)) As IEnumerable(Of T)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function UniqueDuplicates(Of T)(sender As IEnumerable(Of T)) As IEnumerable(Of T)
 
 			Return sender.GroupBy(Function(value As T) value).
 						  Where(Function(group As IGrouping(Of T, T)) group.Count > 1).
@@ -622,8 +516,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function Uniques(Of T)(ByVal sender As IEnumerable(Of T)) As IEnumerable(Of T)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Uniques(Of T)(sender As IEnumerable(Of T)) As IEnumerable(Of T)
 
 			Return sender.Except(UniqueDuplicates(sender))
 
@@ -653,8 +547,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function RemoveDuplicates(Of T)(ByVal sender As IEnumerable(Of T)) As IEnumerable(Of T)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveDuplicates(Of T)(sender As IEnumerable(Of T)) As IEnumerable(Of T)
 
 			Return sender.Distinct
 
@@ -691,9 +585,9 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function SplitIntoParts(Of T)(ByVal sender As IEnumerable(Of T),
-											 ByVal amount As Integer) As IEnumerable(Of IEnumerable(Of T))
+		<System.Runtime.CompilerServices.Extension>
+		Public Function SplitIntoParts(Of T)(sender As IEnumerable(Of T),
+amount As Integer) As IEnumerable(Of IEnumerable(Of T))
 
 			If (amount = 0) OrElse (amount > sender.Count) OrElse (sender.Count Mod amount <> 0) Then
 				Throw New ArgumentOutOfRangeException(paramName:=NameOf(amount),
@@ -738,9 +632,9 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function SplitIntoNumberOfElements(Of T)(ByVal sender As IEnumerable(Of T),
-														ByVal amount As Integer) As IEnumerable(Of IEnumerable(Of T))
+		<System.Runtime.CompilerServices.Extension>
+		Public Function SplitIntoNumberOfElements(Of T)(sender As IEnumerable(Of T),
+amount As Integer) As IEnumerable(Of IEnumerable(Of T))
 
 			Return From index As Integer In Enumerable.Range(0, CInt(Math.Ceiling(sender.Count() / amount)))
 				   Select sender.Skip(index * amount).Take(amount)
@@ -786,10 +680,10 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function SplitIntoNumberOfElements(Of T)(ByVal sender As IEnumerable(Of T),
-														ByVal amount As Integer,
-														ByVal fillEmpty As Boolean,
+		<System.Runtime.CompilerServices.Extension>
+		Public Function SplitIntoNumberOfElements(Of T)(sender As IEnumerable(Of T),
+amount As Integer,
+fillEmpty As Boolean,
 														Optional valueToFill As T = Nothing) As IEnumerable(Of IEnumerable(Of T))
 
 			Return (From count As Integer In Enumerable.Range(0, CInt(Math.Ceiling(sender.Count() / amount)))).
@@ -798,15 +692,13 @@ Namespace Extensions
 							   Select Case fillEmpty
 
 								   Case True
-									   If (sender.Count - (count * amount)) >= amount Then
-										   Return sender.Skip(count * amount).Take(amount)
 
-									   Else
-										   Return sender.Skip(count * amount).Take(amount).
+									   Return If((sender.Count - (count * amount)) >= amount,
+										   sender.Skip(count * amount).Take(amount),
+										   sender.Skip(count * amount).Take(amount).
 													  Concat(Enumerable.Repeat(Of T)(
 															 valueToFill,
-															 amount - (sender.Count() - (count * amount))))
-									   End If
+															 amount - (sender.Count() - (count * amount)))))
 
 								   Case Else
 									   Return sender.Skip(count * amount).Take(amount)
@@ -841,8 +733,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function Randomize(Of T)(ByVal sender As IEnumerable(Of T)) As IEnumerable(Of T)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Randomize(Of T)(sender As IEnumerable(Of T)) As IEnumerable(Of T)
 
 			Dim rand As New Random
 
@@ -877,8 +769,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function ConcatMultiple(Of T)(ByVal sender As IEnumerable(Of T)()) As IEnumerable(Of T)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function ConcatMultiple(Of T)(sender As IEnumerable(Of T)()) As IEnumerable(Of T)
 
 			Return sender.SelectMany(Function(col As IEnumerable(Of T)) col)
 
@@ -914,18 +806,13 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function StringJoin(Of T)(ByVal sender As IEnumerable(Of T)(),
-										 ByVal separator As String) As String
-
+		<System.Runtime.CompilerServices.Extension>
+		Public Function StringJoin(Of T)(sender As IEnumerable(Of T)(), separator As String) As String
 			Dim sb As New System.Text.StringBuilder
-
 			For Each col As IEnumerable(Of T) In sender
 				sb.Append(String.Join(separator, col) & separator)
 			Next col
-
 			Return sb.Remove(sb.Length - separator.Length, separator.Length).ToString
-
 		End Function
 
 		''' ----------------------------------------------------------------------------------------------------
@@ -948,8 +835,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function CountEmptyItems(Of T)(ByVal sender As IEnumerable(Of T)) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function CountEmptyItems(Of T)(sender As IEnumerable(Of T)) As Integer
 
 			Return (From item As T In sender
 					Where item.Equals(Nothing)).Count
@@ -976,8 +863,8 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function CountNonEmptyItems(Of T)(ByVal sender As IEnumerable(Of T)) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function CountNonEmptyItems(Of T)(sender As IEnumerable(Of T)) As Integer
 
 			Return sender.Count - CountEmptyItems(sender)
 
@@ -1009,9 +896,9 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOf(Of T)(ByVal sender As IEnumerable(Of T),
-									  ByVal value As T) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOf(Of T)(sender As IEnumerable(Of T),
+value As T) As Integer
 
 			Return IndexOf(sender, {value}, 0, sender.Count)
 
@@ -1047,10 +934,10 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOf(Of T)(ByVal sender As IEnumerable(Of T),
-									  ByVal value As T,
-									  ByVal index As Integer) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOf(Of T)(sender As IEnumerable(Of T),
+value As T,
+index As Integer) As Integer
 
 			Return IndexOf(sender, {value}, index, sender.Count - index)
 
@@ -1090,11 +977,11 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOf(Of T)(ByVal sender As IEnumerable(Of T),
-									  ByVal value As T,
-									  ByVal index As Integer,
-									  ByVal count As Integer) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOf(Of T)(sender As IEnumerable(Of T),
+value As T,
+index As Integer,
+count As Integer) As Integer
 
 			Return IndexOf(sender, {value}, index, count)
 
@@ -1126,9 +1013,9 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOf(Of T)(ByVal sender As IEnumerable(Of T),
-									  ByVal pattern As IEnumerable(Of T)) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOf(Of T)(sender As IEnumerable(Of T),
+pattern As IEnumerable(Of T)) As Integer
 
 			Return IndexOf(sender, pattern, 0, sender.Count)
 
@@ -1164,10 +1051,10 @@ Namespace Extensions
 		''' </returns>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOf(Of T)(ByVal sender As IEnumerable(Of T),
-									  ByVal pattern As IEnumerable(Of T),
-									  ByVal index As Integer) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOf(Of T)(sender As IEnumerable(Of T),
+pattern As IEnumerable(Of T),
+index As Integer) As Integer
 
 			Return IndexOf(sender, pattern, index, sender.Count - index)
 
@@ -1218,11 +1105,11 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOf(Of T)(ByVal sender As IEnumerable(Of T),
-									  ByVal pattern As IEnumerable(Of T),
-									  ByVal index As Integer,
-									  ByVal count As Integer) As Integer
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOf(Of T)(sender As IEnumerable(Of T),
+pattern As IEnumerable(Of T),
+index As Integer,
+count As Integer) As Integer
 
 			If (sender Is Nothing) OrElse Not sender.Any Then
 				Return -1
@@ -1309,9 +1196,9 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOfAll(Of T)(ByVal sender As IEnumerable(Of T),
-										 ByVal value As T) As IEnumerable(Of Integer)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOfAll(Of T)(sender As IEnumerable(Of T),
+value As T) As IEnumerable(Of Integer)
 
 			Return IndexOfAll(sender, {value}, 0, sender.Count)
 
@@ -1358,10 +1245,10 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOfAll(Of T)(ByVal sender As IEnumerable(Of T),
-										 ByVal value As T,
-										 ByVal index As Integer) As IEnumerable(Of Integer)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOfAll(Of T)(sender As IEnumerable(Of T),
+value As T,
+index As Integer) As IEnumerable(Of Integer)
 
 			Return IndexOfAll(sender, {value}, index, sender.Count - index)
 
@@ -1412,11 +1299,11 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOfAll(Of T)(ByVal sender As IEnumerable(Of T),
-										 ByVal value As T,
-										 ByVal index As Integer,
-										 ByVal count As Integer) As IEnumerable(Of Integer)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOfAll(Of T)(sender As IEnumerable(Of T),
+value As T,
+index As Integer,
+count As Integer) As IEnumerable(Of Integer)
 
 			Return IndexOfAll(sender, {value}, index, count)
 
@@ -1459,9 +1346,9 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOfAll(Of T)(ByVal sender As IEnumerable(Of T),
-										 ByVal pattern As IEnumerable(Of T)) As IEnumerable(Of Integer)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOfAll(Of T)(sender As IEnumerable(Of T),
+pattern As IEnumerable(Of T)) As IEnumerable(Of Integer)
 
 			Return IndexOfAll(sender, pattern, 0, sender.Count)
 
@@ -1508,10 +1395,10 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOfAll(Of T)(ByVal sender As IEnumerable(Of T),
-										 ByVal pattern As IEnumerable(Of T),
-										 ByVal index As Integer) As IEnumerable(Of Integer)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOfAll(Of T)(sender As IEnumerable(Of T),
+pattern As IEnumerable(Of T),
+index As Integer) As IEnumerable(Of Integer)
 
 			Return IndexOfAll(sender, pattern, index, sender.Count - index)
 
@@ -1562,11 +1449,11 @@ Namespace Extensions
 		''' </exception>
 		''' ----------------------------------------------------------------------------------------------------
 		<DebuggerStepThrough>
-		<Extension>
-		Public Function IndexOfAll(Of T)(ByVal sender As IEnumerable(Of T),
-										 ByVal pattern As IEnumerable(Of T),
-										 ByVal index As Integer,
-										 ByVal count As Integer) As IEnumerable(Of Integer)
+		<System.Runtime.CompilerServices.Extension>
+		Public Function IndexOfAll(Of T)(sender As IEnumerable(Of T),
+pattern As IEnumerable(Of T),
+index As Integer,
+count As Integer) As IEnumerable(Of Integer)
 
 			If (sender Is Nothing) OrElse Not sender.Any Then
 				Return Nothing
@@ -1618,22 +1505,7 @@ Namespace Extensions
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#End Region
 
 
 	End Module

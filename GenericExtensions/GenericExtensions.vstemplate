@@ -16,6 +16,9 @@
       <Reference>
         <Assembly>System</Assembly>
       </Reference>
+		<Reference>
+			<Assembly>System.Diagnostics</Assembly>
+		</Reference>
     </References>
     <ProjectItem ReplaceParameters="false">GenericExtensions.vb</ProjectItem>
   </TemplateContent>

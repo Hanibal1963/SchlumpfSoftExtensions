@@ -5,8 +5,8 @@
         <DisplayName>SchlumpfSoftExtensions</DisplayName>
         <Description xml:space="preserve">Eine Sammlung verschiedener Erweiterungsmodulvorlagen.</Description>
         <MoreInfo>https://github.com/Hanibal1963/SchlumpfSoftExtensions</MoreInfo>
-        <License>LICENSE.txt</License>
-        <ReleaseNotes>ReleaseNotes.txt</ReleaseNotes>
+        <License>License.rtf</License>
+        <ReleaseNotes>ReleaseNotes.rtf</ReleaseNotes>
         <Icon>PapaSchlumpf.ico</Icon>
         <Tags>Vorlage Extension VisualBasic</Tags>
         <Preview>true</Preview>
