@@ -3,11 +3,11 @@
 Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 
 - [Die Elementanzahl eines Arrays ändern](GenericExtensions.md#die-elementanzahl-eines-arrays-ändern)
-- [Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren](GenericExtensions.md#Byte-oder_IEnumerableOf-Byte-in-String-Darstellung-konvertieren)
-- [Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln](GenericExtensions.md#Leere_oder_nicht_leere_Elemente_in_IEnumerableOf_String_ermitteln)
-- [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt_gesuchte_Werte_in_IEnumerableOf_String_ermitteln)
-- [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente_die_eine_angegebene_Zeichenfolge_enthalten_in_IEnumerableOf_String_ermitteln)
-- [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente_die_einem_Muster_entsprechen_in_IEnumerableOf_String_ermitteln)
+- [Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren](GenericExtensions.md#Byte-oder-IEnumerableOf-Byte-in-String-Darstellung-konvertieren)
+- [Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln](GenericExtensions.md#Leere-oder-nicht-leere-Elemente-in-IEnumerableOf-String-ermitteln)
+- [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt-gesuchte-Werte-in-IEnumerableOf-String-ermitteln)
+- [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-eine-angegebene-Zeichenfolge-enthalten-in-IEnumerableOf-String-ermitteln)
+- [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-einem-Muster-entsprechen-in-IEnumerableOf-String-ermitteln)
 
 
 ---
