@@ -143,6 +143,188 @@ Namespace Extensions
 		End Function
 
 
+		''' <summary>
+		''' Findet die Elemente, die genau gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <param name="searchString">
+		''' Die Zeichenfolge, nach der gesucht werden soll.
+		''' </param>
+		''' <param name="stringComparison">
+		''' Die Zeichenfolgenvergleichsregel.
+		''' </param>
+		''' <returns>
+		''' Die gefundenen Elemente als <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindExact(sender As IEnumerable(Of String), searchString As String, stringComparison As StringComparison) As IEnumerable(Of String)
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender
+					 Where str.Equals(searchString, stringComparison)
+			Return result
+		End Function
+
+
+		''' <summary>
+		''' Findet die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <param name="searchString">
+		''' Die Zeichenfolge, nach der gesucht werden soll.
+		''' </param>
+		''' <param name="ignoreCase">
+		''' Wenn auf True gesetzt, wird ein nicht sensibler String-Case-Vergleich durchgeführt.
+		''' </param>
+		''' <returns>
+		''' <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindByContains(sender As IEnumerable(Of String), searchString As String,
+									   Optional ignoreCase As Boolean = False) As IEnumerable(Of String)
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender
+					 Where If(ignoreCase, str.ToLower.Contains(searchString.ToLower), str.Contains(searchString))
+			Return result
+		End Function
+
+
+
+
+
+
+
+
+
+
+
+
+		''' <summary>
+		''' Führt eine zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und gibt alle Übereinstimmungen zurück.
+		''' </summary>
+		''' <example> This is a code example.
+		''' <code>
+		''' Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
+		''' Debug.WriteLine(String.Join(", ", col.FindByLike(likePattern:="*hello*", ignoreCase:=True)))
+		''' </code>
+		''' </example>
+		''' <param name="sender">
+		''' The source collections.
+		''' </param>
+		''' <param name="likePattern">
+		''' The pattern comparison to use with the <see langword="Like"/> operator.
+		''' </param>
+		''' <param name="ignoreCase">
+		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
+		''' </param>
+		''' <returns>
+		''' <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindByLike(sender As IEnumerable(Of String), likePattern As String, ignoreCase As Boolean) As IEnumerable(Of String)
+			Return From value As String In sender Where If(ignoreCase, value.ToLower Like likePattern.ToLower, value Like likePattern)
+		End Function
+
+
+
+
+
+		''' <summary>
+		''' Entfernt die Elemente, die gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <example> This is a code example.
+		''' <code>
+		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
+		''' Debug.WriteLine(String.Join(", ", col.RemoveExact(searchString:="Hello", ignoreCase:=True)))
+		''' </code>
+		''' </example>
+		''' <param name="sender">
+		''' The source collections.
+		''' </param>
+		''' <param name="searchString">
+		''' The string to search for.
+		''' </param>
+		''' <param name="stringComparison">
+		''' The string comparison rule.
+		''' </param>
+		''' <returns>
+		''' <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveExact(sender As IEnumerable(Of String), searchString As String, stringComparison As StringComparison) As IEnumerable(Of String)
+			Return From value As String In sender Where Not value.Equals(searchString, stringComparison)
+		End Function
+
+
+
+
+
+		''' <summary>
+		''' Entfernt die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <example> This is a code example.
+		''' <code>
+		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
+		''' Debug.WriteLine(String.Join(", ", col.RemoveByContains(searchString:="Hello", ignoreCase:=True)))
+		''' </code>
+		''' </example>
+		''' <param name="sender">
+		''' The source collections.
+		''' </param>
+		''' <param name="searchString">
+		''' The string to search for.
+		''' </param>
+		''' <param name="ignoreCase">
+		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
+		''' </param>
+		''' <returns>
+		''' <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveByContains(sender As IEnumerable(Of String), searchString As String, ignoreCase As Boolean) As IEnumerable(Of String)
+			Return From value As String In sender Where If(ignoreCase, Not value.ToLower.Contains(searchString.ToLower), Not value.Contains(searchString))
+		End Function
+
+
+
+
+
+
+
+
+
+
+		''' <summary>
+		''' Führt eine zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und entfernt alle Übereinstimmungen.
+		''' </summary>
+		''' <example> This is a code example.
+		''' <code>
+		''' Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
+		''' Debug.WriteLine(String.Join(", ", col.RemoveByLike(likePattern:="*hello*", ignoreCase:=True)))
+		''' </code>
+		''' </example>
+		''' <param name="sender">
+		''' The source collections.
+		''' </param>
+		''' <param name="likePattern">
+		''' The pattern comparison to use with the <see langword="Like"/> operator.
+		''' </param>
+		''' <param name="ignoreCase">
+		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
+		''' </param>
+		''' <returns>
+		''' <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveByLike(sender As IEnumerable(Of String), likePattern As String, ignoreCase As Boolean) As IEnumerable(Of String)
+			Return From value As String In sender Where If(ignoreCase, Not value.ToLower Like likePattern.ToLower, Not value Like likePattern)
+		End Function
+
+
+
 
 
 
@@ -193,225 +375,6 @@ Namespace Extensions
 
 
 
-
-		''' <summary>
-		''' Findet die Elemente, die gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
-		''' </summary>
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
-		''' Debug.WriteLine(String.Join(", ", col.FindExact(searchString:="a", stringComparison:=StringComparison.OrdinalIgnoreCase)))
-		''' </code>
-		''' </example>
-		''' <param name="sender">
-		''' The source collections.
-		''' </param>
-		''' <param name="searchString">
-		''' The string to search for.
-		''' </param>
-		''' <param name="stringComparison">
-		''' The string comparison rule.
-		''' </param>
-		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
-		Public Function FindExact(sender As IEnumerable(Of String),
-searchString As String,
-stringComparison As StringComparison) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where value.Equals(searchString, stringComparison)
-
-		End Function
-
-
-
-
-
-		''' <summary>
-		''' Findet die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
-		''' </summary>
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
-		''' Debug.WriteLine(String.Join(", ", col.FindByContains(searchString:="World", ignoreCase:=True)))
-		''' </code>
-		''' </example>
-		''' <param name="sender">
-		''' The source collections.
-		''' </param>
-		''' <param name="searchString">
-		''' The string to search for.
-		''' </param>
-		''' <param name="ignoreCase">
-		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
-		''' </param>
-		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
-		Public Function FindByContains(sender As IEnumerable(Of String),
-searchString As String,
-ignoreCase As Boolean) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where If(ignoreCase,
-						value.ToLower.Contains(searchString.ToLower),
-						value.Contains(searchString))
-
-		End Function
-
-
-
-
-
-		''' <summary>
-		''' Führt eine zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und gibt alle Übereinstimmungen zurück.
-		''' </summary>
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
-		''' Debug.WriteLine(String.Join(", ", col.FindByLike(likePattern:="*hello*", ignoreCase:=True)))
-		''' </code>
-		''' </example>
-		''' <param name="sender">
-		''' The source collections.
-		''' </param>
-		''' <param name="likePattern">
-		''' The pattern comparison to use with the <see langword="Like"/> operator.
-		''' </param>
-		''' <param name="ignoreCase">
-		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
-		''' </param>
-		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
-		Public Function FindByLike(sender As IEnumerable(Of String),
-likePattern As String,
-ignoreCase As Boolean) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where If(ignoreCase,
-						value.ToLower Like likePattern.ToLower,
-						value Like likePattern)
-
-		End Function
-
-
-
-
-
-		''' <summary>
-		''' Entfernt die Elemente, die gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
-		''' </summary>
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
-		''' Debug.WriteLine(String.Join(", ", col.RemoveExact(searchString:="Hello", ignoreCase:=True)))
-		''' </code>
-		''' </example>
-		''' <param name="sender">
-		''' The source collections.
-		''' </param>
-		''' <param name="searchString">
-		''' The string to search for.
-		''' </param>
-		''' <param name="stringComparison">
-		''' The string comparison rule.
-		''' </param>
-		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveExact(sender As IEnumerable(Of String),
-searchString As String,
-stringComparison As StringComparison) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where Not value.Equals(searchString, stringComparison)
-
-		End Function
-
-
-
-
-
-		''' <summary>
-		''' Entfernt die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
-		''' </summary>
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
-		''' Debug.WriteLine(String.Join(", ", col.RemoveByContains(searchString:="Hello", ignoreCase:=True)))
-		''' </code>
-		''' </example>
-		''' <param name="sender">
-		''' The source collections.
-		''' </param>
-		''' <param name="searchString">
-		''' The string to search for.
-		''' </param>
-		''' <param name="ignoreCase">
-		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
-		''' </param>
-		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveByContains(sender As IEnumerable(Of String),
-searchString As String,
-ignoreCase As Boolean) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where If(ignoreCase,
-						Not value.ToLower.Contains(searchString.ToLower),
-						Not value.Contains(searchString))
-
-		End Function
-
-
-
-
-		''' <summary>
-		''' Führt eine zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und entfernt alle Übereinstimmungen.
-		''' </summary>
-		''' <example> This is a code example.
-		''' <code>
-		''' Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
-		''' Debug.WriteLine(String.Join(", ", col.RemoveByLike(likePattern:="*hello*", ignoreCase:=True)))
-		''' </code>
-		''' </example>
-		''' <param name="sender">
-		''' The source collections.
-		''' </param>
-		''' <param name="likePattern">
-		''' The pattern comparison to use with the <see langword="Like"/> operator.
-		''' </param>
-		''' <param name="ignoreCase">
-		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
-		''' </param>
-		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
-		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveByLike(sender As IEnumerable(Of String),
-likePattern As String,
-ignoreCase As Boolean) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where If(ignoreCase,
-						Not value.ToLower Like likePattern.ToLower,
-						Not value Like likePattern)
-
-		End Function
 
 
 #End Region

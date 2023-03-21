@@ -17,10 +17,54 @@ Public Class GenericExtensionsTest
 
 
 
+
+
+	''' <summary>
+	''' Testet die Funktion FindByContains für IEnumerable(Of String)
+	''' </summary>
+	<TestMethod> Public Sub IEnumerableFindByContains_TestMethod()
+
+		Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
+		Dim result As String
+
+		Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & var.Last & """ gesucht ..." & vbCrLf)
+
+		Debug.Print("Groß und Kleinschreibung wird ignoriert:")
+		result = String.Join(" ,", var.FindByContains(var.Last, True))
+		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
+
+		Debug.Print("Groß und Kleinschreibung wird eingehalten:")
+		result = String.Join(" ,", var.FindByContains(var.Last, False))
+		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
+
+	End Sub
+
+
+	''' <summary>
+	''' Testet die Funktion FindExact für IEnumerable(Of String) 
+	''' </summary>
+	<TestMethod> Public Sub IEnumerableFindExact_TestMethod()
+
+		Dim var As IEnumerable(Of String) = {"Hallo", "Welt", "!!", "a", "b", "c", "welt"}
+		Dim result As String
+
+		Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & var.Last & """ gesucht ..." & vbCrLf)
+
+		Debug.Print("Groß und Kleinschreibung wird ignoriert:")
+		result = String.Join(" ,", var.FindExact(var.Last, StringComparison.OrdinalIgnoreCase))
+		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
+
+		Debug.Print("Groß und Kleinschreibung wird eingehalten:")
+		result = String.Join(" ,", var.FindExact(var.Last, StringComparison.Ordinal))
+		Debug.Print("Es wurde ""{0}"" gefunden.", result)
+
+	End Sub
+
+
 	''' <summary>
 	''' Testet die Funktion CountNonEmptyItems für IEnumerable(Of String)
 	''' </summary>
-	<TestMethod> Public Sub CountNonEmptyItems_TestMethod()
+	<TestMethod> Public Sub IEnumerableCountNonEmptyItems_TestMethod()
 
 		Dim var As IEnumerable(Of String) = {"Hallo", "", " ", "Welt", "!"}
 
@@ -34,7 +78,7 @@ Public Class GenericExtensionsTest
 	''' <summary>
 	''' Testet die Funktion CountEmptyItems für IEnumerable(Of String)
 	''' </summary>
-	<TestMethod> Public Sub CountEmptyItems_TestMethod()
+	<TestMethod> Public Sub IEnumerableCountEmptyItems_TestMethod()
 
 		Dim var As IEnumerable(Of String) = {"Hallo", "", " ", "Welt", "!"}
 
