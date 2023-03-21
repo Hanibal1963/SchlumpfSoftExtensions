@@ -14,7 +14,7 @@ Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 
 Mit dieser Funktion wird die Elementanzahl eines Array neu definiert.
 
-```<vb>
+```vb
 Dim MyArray(x) as Type
 MyArray = MyArray.Resize(y)
 ```
@@ -27,7 +27,7 @@ MyArray = MyArray.Resize(y)
 Mit diesen beiden Funktionen wird der Inhalt in einen String 
 (unter Angabe der Codierung) konvertiert.
 
-```<vb>
+```vb
 Dim Var1() as Byte = {84, 101, 115, 116}
 Console.WriteLine(Var1.ToString(Encoding.ASCII))
 
@@ -46,7 +46,7 @@ Console.WriteLine(Var2.ToString(Encoding.ASCII))
 Die folgenden beiden Methoden ermitteln die Anzahl leerer oder nicht leerer Elemente:
 
 
-```<vb>
+```vb
 Dim var As IEnumerable(Of String) = {"Hallo", "", " ", "Welt", "!"}
 
 'Anzahl der leeren Elemente ermitteln
@@ -63,7 +63,7 @@ Die folgende Methode findet exakt die gesuchten Werte in der Auflistung unter Ei
 der angegebenen Sortierregeln.
 
 
-```<vb>
+```vb
 Dim var As IEnumerable(Of String) = {"Hello", "Welt", "!!", "a", "b", "c", "welt"}
 Dim result As String
 
@@ -86,7 +86,7 @@ Die folgende Methode findet die Werte die die angegebene Zeichenfolge unter Einh
 der angegebenen Sortierregeln enthalten.
 
 
-```<vb>
+```vb
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
 Dim result As String
 
@@ -109,7 +109,7 @@ Die folgende Methode führt eine Mustersuche durch und findet
 die Werte die dem angegebenem Muster entsprechen.
 
 
-```<vb>
+```vb
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
 Dim result As String
 

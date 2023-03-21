@@ -30,7 +30,7 @@ Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Doub
  
 Die folgenden Funktionen geben den Prozentsatz eines Wertes von dem Parameterwert zurück.
 
-```<vb>
+```vb
  Short.PercentageOf(Double) As Double
  UShort.PercentageOf(Double) As Double
  Integer.PercentageOf(Double) As Double
@@ -49,7 +49,7 @@ Die folgenden Funktionen geben den Prozentsatz eines Wertes von dem Parameterwer
 
 Die folgenden Funktionen geben den Bruchteil (Prozentsatz) eines Wertes	zurück.
 
-```<vb>
+```vb
  Short.FractionBy(Double) As Double
  UShort.FractionBy(Double) As Double
  Integer.FractionBy(Double) As Double
@@ -68,7 +68,7 @@ Die folgenden Funktionen geben den Bruchteil (Prozentsatz) eines Wertes	zurück.
 
 Die folgenden Funktionen geben True zurück wenn der Wert positiv ist.
 
-```<vb>
+```vb
  Short.IsPositive() As Boolean
  Integer.IsPositive() As Boolean
  Long.IsPositive() As Boolean
@@ -85,7 +85,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert positiv ist.
 
 Die folgenden Funktionen geben True zurück wenn der Wert negativ ist.
 
-```<vb>
+```vb
  Short.IsNegative() As Boolean
  Integer.IsNegative() As Boolean
  Long.IsNegative() As Boolean
@@ -101,7 +101,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert negativ ist.
 
 Die folgenden Funktionen geben True zurück wenn der Wert ein Primzahl ist.
 
-```<vb>
+```vb
  Short.IsPrime() As Boolean
  UShort.IsPrime() As Boolean
  Integer.IsPrime() As Boolean
@@ -117,7 +117,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert ein Primzahl ist.
 Die folgenden Funktionen geben True zurück wenn der Wert ohne Rest 
 durch den angegebenen Wert teilbar ist.
 
-```<vb>
+```vb
  Short.IsDivisibleBy(Double) As Boolean
  UShort.IsDivisibleBy(Double) As Boolean
  Integer.IsDivisibleBy(Double) As Boolean
@@ -137,7 +137,7 @@ durch den angegebenen Wert teilbar ist.
 Die folgenden Funktionen geben True zurück wenn der angegebene Wert 
 ein vielfaches vom Wert ist.
 
-```<vb>
+```vb
  Short.IsMultipleBOf(Double) As Boolean
  UShort.IsMultipleBOf(Double) As Boolean
  Integer.IsMultipleBOf(Double) As Boolean
@@ -157,7 +157,7 @@ ein vielfaches vom Wert ist.
 Die folgenden Funktionen geben True zurück wenn der Wert im Bereich
 eines Minimalwertes und eines Maximalwertes liegt.
 
-```<vb>
+```vb
  Short.IsInRangeOf(Double, Double) As Boolean
  UShort.IsInRangeOf(Double, Double) As Boolean
  Integer.IsInRangeOf(Double, Double) As Boolean
@@ -177,7 +177,7 @@ eines Minimalwertes und eines Maximalwertes liegt.
 Die folgenden Funktionen ermitteln die Differenz zwischen dem Wert und 
 einem angegebenen Wert.
 
-```<vb>
+```vb
  Short.DifferenceOf(Double) As Double
  UShort.DifferenceOf(Double) As Double
  Integer.DifferenceOf(Double) As Double
@@ -197,7 +197,7 @@ einem angegebenen Wert.
 Die folgenden Funktionen geben einen String zurück der die Headezimale Darstellung
 des Wertes wiedergibt.
 
-```<vb>
+```vb
  Short.ToVBHex() As String
  UShort.ToVBHex() As String
  Integer.ToVBHex() As String
@@ -212,7 +212,7 @@ des Wertes wiedergibt.
 Die folgenden Funktionen geben einen String zurück der die Headezimale Darstellung
 des Wertes wiedergibt.
 
-```<vb>
+```vb
  Short.ToCSharpHex() As String
  UShort.ToCSharpHex() As String
  Integer.ToCSharpHex() As String
@@ -228,7 +228,7 @@ des Wertes wiedergibt.
 Die folgenden Funktionen geben einen String zurück der den Wert in Abhängigkeit 
 von der angegebenen Kultur mit einer angegebenen Genauigkeit der Dezimalstelle darstellt.
 
-```<vb>
+```vb
  Short.Formatted(Opt: Integer, Opt: CultureInfo) As String
  UShort.Formatted(Opt: Integer, Opt: CultureInfo) As String
  Integer.Formatted(Opt: Integer, Opt: CultureInfo) As String
