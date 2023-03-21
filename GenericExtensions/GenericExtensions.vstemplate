@@ -2,7 +2,7 @@
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <Name>GenericExtensions</Name>
-    <Description>GenericExtensions</Description>
+    <Description>Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.</Description>
     <Icon>GenericExtensions.ico</Icon>
     <TemplateID>29516cb6-e9f4-48e9-ab6d-0623e0dbb0d2</TemplateID>
     <SortOrder>1000</SortOrder>

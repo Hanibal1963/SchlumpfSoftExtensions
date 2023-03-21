@@ -18,11 +18,37 @@ Public Class GenericExtensionsTest
 
 
 
+	''' <summary>
+	''' Testet die Funktion FindByLike für IEnumerable(Of String)
+	''' </summary>
+	<TestMethod> Public Sub IEnumerableFindByLike_TestMethod()
+
+		Debug.Print("*** IEnumerable(Of String).FindByLike() Funktionstest ***" & vbCrLf)
+
+
+		Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
+		Dim result As String
+
+		Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & "*" & var.Last & "*" & """ gesucht ..." & vbCrLf)
+
+		Debug.Print("Groß und Kleinschreibung wird ignoriert:")
+		result = String.Join(" ,", var.FindByLike("*" & var.Last & "*", True))
+		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
+
+		Debug.Print("Groß und Kleinschreibung wird eingehalten:")
+		result = String.Join(" ,", var.FindByLike("*" & var.Last & "*"))
+		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
+
+	End Sub
+
 
 	''' <summary>
 	''' Testet die Funktion FindByContains für IEnumerable(Of String)
 	''' </summary>
 	<TestMethod> Public Sub IEnumerableFindByContains_TestMethod()
+
+		Debug.Print("*** IEnumerable(Of String).FindByContains() Funktionstest ***" & vbCrLf)
+
 
 		Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
 		Dim result As String
@@ -34,7 +60,7 @@ Public Class GenericExtensionsTest
 		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 		Debug.Print("Groß und Kleinschreibung wird eingehalten:")
-		result = String.Join(" ,", var.FindByContains(var.Last, False))
+		result = String.Join(" ,", var.FindByContains(var.Last))
 		Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 	End Sub
@@ -44,6 +70,8 @@ Public Class GenericExtensionsTest
 	''' Testet die Funktion FindExact für IEnumerable(Of String) 
 	''' </summary>
 	<TestMethod> Public Sub IEnumerableFindExact_TestMethod()
+
+		Debug.Print("*** IEnumerable(Of String).FindExact() Funktionstest ***" & vbCrLf)
 
 		Dim var As IEnumerable(Of String) = {"Hallo", "Welt", "!!", "a", "b", "c", "welt"}
 		Dim result As String

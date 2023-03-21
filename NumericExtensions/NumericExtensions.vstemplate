@@ -6,7 +6,7 @@
 		Diese Vorlage enthält benutzerdefinierte Erweiterungsmethoden zur Verwendung mit den Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Double.
 	</Description>
     <Icon>NumericExtensions.ico</Icon>
-    <TemplateID>1a07e791-e692-43a7-a760-e0827dca5d6f</TemplateID>
+	  <TemplateID>1a07e791-e692-43a7-a760-e0827dca5d6f</TemplateID>
     <SortOrder>1000</SortOrder>
     <DefaultName>NumericExtensions.vb</DefaultName>
     <ProjectType>VisualBasic</ProjectType>
