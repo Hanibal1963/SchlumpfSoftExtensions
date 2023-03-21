@@ -4,7 +4,10 @@ Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 
 - [Die Elementanzahl eines Arrays ändern](GenericExtensions.md#Die_Elementanzahl_eines_Arrays_ändern)
 - [Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren](GenericExtensions.md#Byte()_oder_IEnumerable(Of_Byte)_in_String-Darstellung_konvertieren)
-- [Erweiterungsmethoden für IEnumerable(Of String)](GenericExtensions.md#Erweiterungsmethoden_für_IEnumerable(Of_String))
+- [Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln](GenericExtensions.md#Leere_oder_nicht_leere_Elemente_in_IEnumerable(Of_String)_ermitteln)
+- [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt_gesuchte_Werte_in_IEnumerable(Of_String)_ermitteln)
+- [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln](GenericExtensions.md#Elemente_die_eine_angegebene_Zeichenfolge_enthalten_in_IEnumerable(Of_String)_ermitteln)
+- [Elemente die einem Muster entsprechen in IEnumerable(Of String) ermitteln](GenericExtensions.md#Elemente_die_einem_Muster_entsprechen_in_IEnumerable(Of_String)_ermitteln)
 
 
 ---
@@ -40,7 +43,7 @@ Console.WriteLine(Var2.ToString(Encoding.ASCII))
 ---
 
 
-### Erweiterungsmethoden für IEnumerable(Of String)
+### Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln
 
 
 Die folgenden beiden Methoden ermitteln die Anzahl leerer oder nicht leerer Elemente:
@@ -59,6 +62,8 @@ Console.WriteLine("Anzahl der nicht leeren Elemente: " & var.CountNonEmptyItems)
 ---
 
 
+### Exakt gesuchte Werte in IEnumerable(Of String) ermitteln
+
 Die folgende Methode findet exakt die gesuchten Werte in der Auflistung unter Einhaltung 
 der angegebenen Sortierregeln.
 
@@ -76,12 +81,11 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 Debug.Print("Groß und Kleinschreibung wird eingehalten:")
 result = String.Join(" ,", var.FindExact(var.Last, StringComparison.Ordinal))
 Debug.Print("Es wurde ""{0}"" gefunden.", result)
-
-
----
-
-
 ```
+
+
+### Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
+
 Die folgende Methode findet die Werte die die angegebene Zeichenfolge unter Einhaltung 
 der angegebenen Sortierregeln enthalten.
 
@@ -104,6 +108,8 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 ---
 
+
+### Elemente die einem Muster entsprechen in IEnumerable(Of String) ermitteln
 
 Die folgende Methode führt eine Mustersuche durch und findet 
 die Werte die dem angegebenem Muster entsprechen.
