@@ -8,6 +8,7 @@ Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 - [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt-gesuchte-Werte-in-IEnumerableOf-String-ermitteln)
 - [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-eine-angegebene-Zeichenfolge-enthalten-in-IEnumerableOf-String-ermitteln)
 - [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-einem-Muster-entsprechen-in-IEnumerableOf-String-ermitteln)
+- [Elemente von IEnmerable(Of String) sortieren](GenericExtensions.md#Elemente-von-IEnmerable(Of-String)-sortieren)
 
 
 ---
@@ -136,18 +137,25 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 ---
 
 
+### Elemente von IEnmerable(Of String) sortieren
 
+Mit dieser funktion werden die Elemente der auflistung nach der Bubble-Sort-Methode sortiert.
 
+```vb
+Dim var As IEnumerable(Of String) = {"10", "333", "2", "45"}
 
+Debug.Print("Der ursprüngliche Inhalt von {0} lautet:", var.ToString)
+Debug.Print(String.Join(" ,", var) & vbCrLf)
 
-   - IEnumerable(Of String).BubbleSort As IEnumerable(Of String)
-   - IEnumerable(Of String).RemoveByContains(String, Boolean) As IEnumerable(Of String)
-   - IEnumerable(Of String).RemoveByLike(String, Boolean) As IEnumerable(Of String)
-   - IEnumerable(Of String).RemoveExact(String, StringComparison) As IEnumerable(Of String)
-
+Debug.Print("Der sortierte Inhalt von {0} lautet:", var.ToString)
+Debug.Print(String.Join(", ", var.BubbleSort))
+```
 
 
 ---
 
 
 
+   - IEnumerable(Of String).RemoveByContains(String, Boolean) As IEnumerable(Of String)
+   - IEnumerable(Of String).RemoveByLike(String, Boolean) As IEnumerable(Of String)
+   - IEnumerable(Of String).RemoveExact(String, StringComparison) As IEnumerable(Of String)

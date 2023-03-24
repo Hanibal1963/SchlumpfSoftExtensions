@@ -6,6 +6,7 @@
 '
 
 
+Imports System.Security.Cryptography
 Imports System.Text
 Imports ExtensionsTestProjekt.Extensions
 
@@ -13,9 +14,60 @@ Imports ExtensionsTestProjekt.Extensions
 <TestClass()>
 Public Class GenericExtensionsTest
 
+	<TestMethod> Public Sub TestMethod3()
+
+		Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
+		Debug.WriteLine(String.Join(", ", col.RemoveByLike(likePattern:="*hello*", ignoreCase:=True)))
 
 
 
+	End Sub
+
+	<TestMethod> Public Sub TestMethod2()
+
+		Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
+		Debug.WriteLine(String.Join(", ", col.RemoveByContains(searchString:="Hello", ignoreCase:=True)))
+
+
+
+
+	End Sub
+
+	<TestMethod> Public Sub TestMethod1()
+
+
+
+		'Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
+		'Debug.WriteLine(String.Join(", ", col.RemoveExact(searchString:="Hello", ignoreCase:=True)))
+
+
+
+
+
+
+	End Sub
+
+
+
+
+
+	''' <summary>
+	''' Testet die Funktion BubbleSort für IEnumerable(Of String)
+	''' </summary>
+	<TestMethod> Public Sub IEnumerableBubbleSort_TestMethod()
+
+
+		Debug.Print("*** IEnumerable(Of String).BubbleSort() Funktionstest ***" & vbCrLf)
+
+		Dim var As IEnumerable(Of String) = {"10", "333", "2", "45"}
+
+		Debug.Print("Der ursprüngliche Inhalt von {0} lautet:", var.ToString)
+		Debug.Print(String.Join(" ,", var) & vbCrLf)
+
+		Debug.Print("Der sortierte Inhalt von {0} lautet:", var.ToString)
+		Debug.Print(String.Join(", ", var.BubbleSort))
+
+	End Sub
 
 
 	''' <summary>
