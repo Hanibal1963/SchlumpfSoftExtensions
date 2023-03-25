@@ -41,7 +41,8 @@ Namespace Extensions
 		''' </exception>
 		<Diagnostics.DebuggerStepThrough>
 		<Runtime.CompilerServices.Extension>
-		Public Function Resize(Of T)(sender As T(), newSize As Integer) As T()
+		Public Function Resize(Of T)(sender As T(),
+									 newSize As Integer) As T()
 			If newSize <= 0 Then
 				Throw New ArgumentOutOfRangeException(String.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION_MESSAGE, NameOf(newSize)))
 			End If
@@ -73,7 +74,8 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function ToString(sender As Byte(), encoding As System.Text.Encoding) As String
+		Public Function ToString(sender As Byte(),
+								 encoding As System.Text.Encoding) As String
 			If encoding Is Nothing Then
 				encoding = System.Text.Encoding.Default
 			End If
@@ -93,7 +95,8 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function ToString(sender As IEnumerable(Of Byte), encoding As System.Text.Encoding) As String
+		Public Function ToString(sender As IEnumerable(Of Byte),
+								 encoding As System.Text.Encoding) As String
 			Return ToString(sender.ToArray, encoding)
 		End Function
 
@@ -163,7 +166,9 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function FindExact(sender As IEnumerable(Of String), searchString As String, stringComparison As StringComparison) As IEnumerable(Of String)
+		Public Function FindExact(sender As IEnumerable(Of String),
+								  searchString As String,
+								  stringComparison As StringComparison) As IEnumerable(Of String)
 			Dim result As IEnumerable(Of String)
 			result = From str As String In sender
 					 Where str.Equals(searchString, stringComparison)
@@ -185,11 +190,14 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function FindByContains(sender As IEnumerable(Of String), searchString As String,
+		Public Function FindByContains(sender As IEnumerable(Of String),
+									   searchString As String,
 									   Optional ignoreCase As Boolean = False) As IEnumerable(Of String)
 			Dim result As IEnumerable(Of String)
 			result = From str As String In sender
-					 Where If(ignoreCase, str.ToLower.Contains(searchString.ToLower), str.Contains(searchString))
+					 Where If(ignoreCase,
+						 str.ToLower.Contains(searchString.ToLower),
+						 str.Contains(searchString))
 			Return result
 		End Function
 
@@ -209,10 +217,14 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function FindByLike(sender As IEnumerable(Of String), likePattern As String,
+		Public Function FindByLike(sender As IEnumerable(Of String),
+								   likePattern As String,
 								   Optional ignoreCase As Boolean = False) As IEnumerable(Of String)
 			Dim result As IEnumerable(Of String)
-			result = From str As String In sender Where If(ignoreCase, str.ToLower Like likePattern.ToLower, str Like likePattern)
+			result = From str As String In sender
+					 Where If(ignoreCase,
+						 str.ToLower Like likePattern.ToLower,
+						 str Like likePattern)
 			Return result
 		End Function
 
@@ -264,78 +276,77 @@ Namespace Extensions
 
 
 		''' <summary>
-		''' Removes the elements that are equals to the specified string on the source <see cref="IEnumerable(Of String)"/>.
+		''' Entfernt die Elemente, die genau gleich der angegebenen Zeichenfolge in der Quelle sind <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
 		''' <param name="searchString">
-		''' The string to search for.
+		''' Die Zeichenfolge, nach der gesucht werden soll.
 		''' </param>
 		''' <param name="stringComparison">
-		''' The string comparison rule.
+		''' Die Zeichenfolgenvergleichsregel.
 		''' </param>
 		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
+		''' Die übrigen Elemente in <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveExact(ByVal sender As IEnumerable(Of String),
-									ByVal searchString As String,
-									ByVal stringComparison As StringComparison) As IEnumerable(Of String)
+		Public Function RemoveExact(sender As IEnumerable(Of String),
+									searchString As String,
+									stringComparison As StringComparison) As IEnumerable(Of String)
 
-			Return From value As String In sender
-				   Where Not value.Equals(searchString, stringComparison)
+			Return From value As String In sender Where Not value.Equals(searchString, stringComparison)
 
 		End Function
 
 
 		''' <summary>
-		''' Removes the elements that contains the specified string on the source <see cref="IEnumerable(Of String)"/>.
+		''' Entfernt die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
 		''' </summary>
 		''' <param name="searchString">
-		''' The string to search for.
+		''' Die Zeichenfolge, nach der gesucht werden soll.
 		''' </param>
 		''' <param name="ignoreCase">
-		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
+		''' Standardmässig wird ein nicht sensibler String-Case-Vergleich durchgeführt.
 		''' </param>
 		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
+		''' Die übrigen Elemente in <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveByContains(ByVal sender As IEnumerable(Of String),
-										 ByVal searchString As String,
-										 ByVal ignoreCase As Boolean) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where If(ignoreCase,
-							Not value.ToLower.Contains(searchString.ToLower),
-							Not value.Contains(searchString))
-
+		Public Function RemoveByContains(sender As IEnumerable(Of String),
+										 searchString As String,
+										 Optional ignoreCase As Boolean = True) As IEnumerable(Of String)
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender
+					 Where If(ignoreCase,
+						 Not str.ToLower.Contains(searchString.ToLower),
+						 Not str.Contains(searchString))
+			Return result
 		End Function
 
 
 		''' <summary>
-		''' Performs a String-Like pattern search on the source <see cref="IEnumerable(Of String)"/> and removes all the matches.
+		''' Führt eine Zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und entfernt alle Übereinstimmungen.
 		''' </summary>
 		''' <param name="likePattern">
-		''' The pattern comparison to use with the <see langword="Like"/> operator.
+		''' Der mit dem <see langword="Like"/>-Operator zu verwendende Mustervergleich.
 		''' </param>
 		''' <param name="ignoreCase">
-		''' If set to <c>true</c>, performs a non sensitive string-case comparison.
+		''' Standardmässig wird ein nicht sensibler String-Case-Vergleich durchgeführt.
 		''' </param>
 		''' <returns>
-		''' <see cref="IEnumerable(Of String)"/>.
+		''' Die übrigen Elemente in <see cref="IEnumerable(Of String)"/>.
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveByLike(ByVal sender As IEnumerable(Of String),
-									 ByVal likePattern As String,
-									 ByVal ignoreCase As Boolean) As IEnumerable(Of String)
-
-			Return From value As String In sender
-				   Where If(ignoreCase,
-							Not value.ToLower Like likePattern.ToLower,
-							Not value Like likePattern)
-
+		Public Function RemoveByLike(sender As IEnumerable(Of String),
+									 likePattern As String,
+									 Optional ignoreCase As Boolean = True) As IEnumerable(Of String)
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender
+					 Where If(ignoreCase,
+						 Not str.ToLower Like likePattern.ToLower,
+						 Not str Like likePattern)
+			Return result
 		End Function
 
 

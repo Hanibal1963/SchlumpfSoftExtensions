@@ -14,41 +14,55 @@ Imports ExtensionsTestProjekt.Extensions
 <TestClass()>
 Public Class GenericExtensionsTest
 
-	<TestMethod> Public Sub TestMethod3()
+	<TestMethod> Public Sub IEnumerableRemoveByLike_TestMethod()
 
-		Dim col As IEnumerable(Of String) = {"Hello World", "a", "b", "c"}
-		Debug.WriteLine(String.Join(", ", col.RemoveByLike(likePattern:="*hello*", ignoreCase:=True)))
+		Debug.Print("*** IEnumerable(Of String).RemoveByLike() Funktionstest ***" & vbCrLf)
 
+		Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
+		Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", "*" & var.Last & "*", var.ToString)
+		Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
+		Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
+		Debug.Print(String.Join(", ", var.RemoveByLike("*" & var.Last & "*")) & vbCrLf)
 
-	End Sub
-
-	<TestMethod> Public Sub TestMethod2()
-
-		Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
-		Debug.WriteLine(String.Join(", ", col.RemoveByContains(searchString:="Hello", ignoreCase:=True)))
-
-
-
-
-	End Sub
-
-	<TestMethod> Public Sub TestMethod1()
-
-
-
-		'Dim col As IEnumerable(Of String) = {"Hello World !!", "a", "b", "c"}
-		'Debug.WriteLine(String.Join(", ", col.RemoveExact(searchString:="Hello", ignoreCase:=True)))
-
-
-
-
-
+		Debug.Print("Groß- und Kleinschreibung wird beachtet ...")
+		Debug.Print(String.Join(", ", var.RemoveByLike("*" & var.Last & "*", False)))
 
 	End Sub
 
 
+	<TestMethod> Public Sub IEnumerableRemoveByContains_TestMethod()
 
+		Debug.Print("*** IEnumerable(Of String).RemoveByContains() Funktionstest ***" & vbCrLf)
+
+		Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
+		Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+		Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
+
+		Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
+		Debug.Print(String.Join(", ", var.RemoveByContains(var.Last)) & vbCrLf)
+
+		Debug.Print("Groß- und Kleinschreibung wird beachtet ...")
+		Debug.Print(String.Join(", ", var.RemoveByContains(var.Last, False)))
+
+	End Sub
+
+
+	<TestMethod> Public Sub RemoveExact_TestMethod()
+
+		Debug.Print("*** IEnumerableIEnumerable(Of String).RemoveExact() Funktionstest ***" & vbCrLf)
+
+		Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
+		Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+		Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
+
+		Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
+		Debug.Print(String.Join(", ", var.RemoveExact(var.Last, StringComparison.OrdinalIgnoreCase)) & vbCrLf)
+
+		Debug.Print("Groß- und Kleinschreibung wird beachtet ...")
+		Debug.Print(String.Join(", ", var.RemoveExact(var.Last, StringComparison.Ordinal)))
+
+	End Sub
 
 
 	''' <summary>

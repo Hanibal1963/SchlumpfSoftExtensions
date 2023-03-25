@@ -9,6 +9,9 @@ Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 - [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-eine-angegebene-Zeichenfolge-enthalten-in-IEnumerableOf-String-ermitteln)
 - [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-einem-Muster-entsprechen-in-IEnumerableOf-String-ermitteln)
 - [Elemente von IEnmerable(Of String) sortieren](GenericExtensions.md#Elemente-von-IEnmerable(Of-String)-sortieren)
+- [Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen](GenericExtensions.md#Elemente-aus-IEnumerable(Of-String)-entfernen-die-einem-angegebenem-Muster-entsprechen)
+- [Elemente aus IEnumerable(Of String) entfernen die genau Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerable(Of-String)-entfernen-die-einer-Zeichenfolge-entsprechen)
+- [Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerable(Of-String)-entfernen-die-genau-einer-Zeichenfolge-entsprechen)
 
 
 ---
@@ -139,7 +142,7 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 ### Elemente von IEnmerable(Of String) sortieren
 
-Mit dieser funktion werden die Elemente der auflistung nach der Bubble-Sort-Methode sortiert.
+Mit dieser Funktion werden die Elemente der Auflistung nach der Bubble-Sort-Methode sortiert.
 
 ```vb
 Dim var As IEnumerable(Of String) = {"10", "333", "2", "45"}
@@ -155,7 +158,63 @@ Debug.Print(String.Join(", ", var.BubbleSort))
 ---
 
 
+### Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen
 
-   - IEnumerable(Of String).RemoveByContains(String, Boolean) As IEnumerable(Of String)
-   - IEnumerable(Of String).RemoveByLike(String, Boolean) As IEnumerable(Of String)
-   - IEnumerable(Of String).RemoveExact(String, StringComparison) As IEnumerable(Of String)
+Die folgende Funktion entfernt alle Werte die einem angegebenem Muster entsprechen.
+
+```vb
+Debug.Print("*** IEnumerable(Of String).RemoveByLike() Funktionstest ***" & vbCrLf)
+
+Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", "*" & var.Last & "*", var.ToString)
+Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
+
+Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
+Debug.Print(String.Join(", ", var.RemoveByLike("*" & var.Last & "*")) & vbCrLf)
+
+Debug.Print("Groß- und Kleinschreibung wird beachtet ...")
+Debug.Print(String.Join(", ", var.RemoveByLike("*" & var.Last & "*", False)))
+```
+
+---
+
+
+### Elemente aus IEnumerable(Of String) entfernen die einer Zeichenfolge entsprechen
+
+Die folgende Funktion entfernt alle Werte die einer angegebenen Zeichenfolge entsprechen.
+
+```vb
+Debug.Print("*** IEnumerable(Of String).RemoveByContains() Funktionstest ***" & vbCrLf)
+
+Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
+
+Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
+Debug.Print(String.Join(", ", var.RemoveByContains(var.Last)) & vbCrLf)
+
+Debug.Print("Groß- und Kleinschreibung wird beachtet ...")
+Debug.Print(String.Join(", ", var.RemoveByContains(var.Last, False)))
+```
+
+
+---
+
+
+### Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen
+
+Die folgende Funktion entfern alle Elemente die genau der angegebenen Zeichenfolge entsprechen.
+
+```vb
+Debug.Print("*** IEnumerableIEnumerable(Of String).RemoveExact() Funktionstest ***" & vbCrLf)
+
+Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
+
+Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
+Debug.Print(String.Join(", ", var.RemoveExact(var.Last, StringComparison.OrdinalIgnoreCase)) & vbCrLf)
+
+Debug.Print("Groß- und Kleinschreibung wird beachtet ...")
+Debug.Print(String.Join(", ", var.RemoveExact(var.Last, StringComparison.Ordinal)))
+```
