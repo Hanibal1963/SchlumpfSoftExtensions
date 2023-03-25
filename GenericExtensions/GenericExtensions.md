@@ -8,10 +8,10 @@ Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 - [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt-gesuchte-Werte-in-IEnumerableOf-String-ermitteln)
 - [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-eine-angegebene-Zeichenfolge-enthalten-in-IEnumerableOf-String-ermitteln)
 - [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-einem-Muster-entsprechen-in-IEnumerableOf-String-ermitteln)
-- [Elemente von IEnmerable(Of String) sortieren](GenericExtensions.md#Elemente-von-IEnmerable(Of-String)-sortieren)
-- [Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen](GenericExtensions.md#Elemente-aus-IEnumerable(Of-String)-entfernen-die-einem-angegebenem-Muster-entsprechen)
-- [Elemente aus IEnumerable(Of String) entfernen die genau Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerable(Of-String)-entfernen-die-einer-Zeichenfolge-entsprechen)
-- [Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerable(Of-String)-entfernen-die-genau-einer-Zeichenfolge-entsprechen)
+- [Elemente von IEnmerable(Of String) sortieren](GenericExtensions.md#Elemente-von-IEnmerableOf-String-sortieren)
+- [Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-einem-angegebenem-Muster-entsprechen)
+- [Elemente aus IEnumerable(Of String) entfernen die genau Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-einer-Zeichenfolge-entsprechen)
+- [Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-genau-einer-Zeichenfolge-entsprechen)
 
 
 ---
