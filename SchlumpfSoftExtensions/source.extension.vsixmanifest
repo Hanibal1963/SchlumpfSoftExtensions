@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="SchlumpfSoftExtensions.56aca1cc-307d-4e0d-8faf-a835e6635e3e" Version="1.1.2023" Language="de-DE" Publisher="Andreas Sauer" />
+        <Identity Id="SchlumpfSoftExtensions.56aca1cc-307d-4e0d-8faf-a835e6635e3e" Version="1.2.2023" Language="de-DE" Publisher="Andreas Sauer" />
         <DisplayName>SchlumpfSoftExtensions</DisplayName>
         <Description xml:space="preserve">Eine Sammlung verschiedener Erweiterungsmodulvorlagen.</Description>
         <MoreInfo>https://github.com/Hanibal1963/SchlumpfSoftExtensions</MoreInfo>

@@ -19,7 +19,7 @@ Namespace Extensions
 	''' <see cref="Short"/>, <see cref="UShort"/>, <see cref="Integer"/>, <see cref="UInteger"/>, 
 	''' <see cref="Long"/>, <see cref="ULong"/>, <see cref="Decimal"/>, <see cref="Single"/> und <see cref="Double"/>.
 	''' </summary>
-	Module NumericExtensions
+	Public Module NumericExtensions
 
 
 #Region "interne Funktionen"
