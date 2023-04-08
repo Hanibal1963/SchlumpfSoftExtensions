@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>GenericExtensions</Name>
-    <Description>Enthält verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.</Description>
-    <Icon>GenericExtensions.ico</Icon>
-    <TemplateID>29516cb6-e9f4-48e9-ab6d-0623e0dbb0d2</TemplateID>
+    <Name>BitmapExtensions</Name>
+    <Description>BitmapExtensions</Description>
+    <Icon>BitmapExtensions.ico</Icon>
+    <TemplateID>f5f9a394-d6e4-4ee8-a464-1593cd9cc380</TemplateID>
     <SortOrder>1000</SortOrder>
-    <DefaultName>GenericExtensions.vb</DefaultName>
+    <DefaultName>BitmapExtensions.vb</DefaultName>
     <ProjectType>VisualBasic</ProjectType>
     <RequiredFrameworkVersion>4.7.2</RequiredFrameworkVersion>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
@@ -16,10 +16,7 @@
       <Reference>
         <Assembly>System</Assembly>
       </Reference>
-		<Reference>
-			<Assembly>System.Diagnostics</Assembly>
-		</Reference>
     </References>
-    <ProjectItem ReplaceParameters="false">GenericExtensions.vb</ProjectItem>
+    <ProjectItem ReplaceParameters="false">BitmapExtensions.vb</ProjectItem>
   </TemplateContent>
 </VSTemplate>

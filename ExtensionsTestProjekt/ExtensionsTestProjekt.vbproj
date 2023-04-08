@@ -17,7 +17,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
-    <AssemblyVersion>1.2023.3.49</AssemblyVersion>
+    <AssemblyVersion>1.2023.4.72</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -52,6 +52,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -70,6 +72,9 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\BitmapExtensions\BitmapExtensions.vb">
+      <Link>BitmapExtensions.vb</Link>
+    </Compile>
     <Compile Include="..\GenericExtensions\GenericExtensions.vb">
       <Link>GenericExtensions.vb</Link>
     </Compile>
@@ -77,6 +82,13 @@
       <Link>NumericExtensions.vb</Link>
     </Compile>
     <Compile Include="GenericExtensionsTest.vb" />
+    <Compile Include="BitmapExtensionsPreviewDialog.Designer.vb">
+      <DependentUpon>BitmapExtensionsPreviewDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BitmapExtensionsPreviewDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BitmapExtensionsTest.vb" />
     <Compile Include="NumericExtensionsTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -95,6 +107,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BitmapExtensionsPreviewDialog.resx">
+      <DependentUpon>BitmapExtensionsPreviewDialog.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -128,4 +143,8 @@
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
 </Project>

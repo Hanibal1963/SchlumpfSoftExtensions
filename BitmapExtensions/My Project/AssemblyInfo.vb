@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("NumericExtensions")>
+<Assembly: AssemblyTitle("BitmapExtensions")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("Andreas Sauer")>
-<Assembly: AssemblyProduct("NumericExtensions")>
+<Assembly: AssemblyProduct("BitmapExtensions")>
 <Assembly: AssemblyCopyright("Copyright © Andreas Sauer 2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("d1e7a704-c7a7-466f-b794-3352acc1f222")>
+<Assembly: Guid("ddeca59f-8732-457b-901d-2973597a798b")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,7 +31,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.2023.4.18")>
-<Assembly: AssemblyFileVersion("1.2023.4.18")>
+<Assembly: AssemblyVersion("1.2023.4.2")>
+<Assembly: AssemblyFileVersion("1.2023.4.2")>
 
-<assembly: AssemblyInformationalVersion("0.2023.4.18")>
+<assembly: AssemblyInformationalVersion("0.2023.4.2")>

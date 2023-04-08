@@ -30,7 +30,9 @@ Namespace Extensions
 		''' abhängig von der angegebenen Kultur.
 		''' </summary>
 		<System.Diagnostics.DebuggerStepThrough>
-		Private Function InternalFormatted(sender As Double, precision As Integer, culture As System.Globalization.CultureInfo) As String
+		Private Function InternalFormatted(sender As Double,
+										   precision As Integer,
+										   culture As System.Globalization.CultureInfo) As String
 			If culture Is Nothing Then
 				culture = System.Globalization.CultureInfo.CurrentUICulture
 			End If
@@ -117,10 +119,13 @@ Namespace Extensions
 
 
 		''' <summary>
-		''' Bestimmt, ob der Quellwert im Bereich der angegebenen <paramref name="minimum"/>- und <paramref name="maximum"/>-Werte liegt.
+		''' Bestimmt, ob der Quellwert im Bereich der angegebenen 
+		''' <paramref name="minimum"/>- und <paramref name="maximum"/>-Werte liegt.
 		''' </summary>
 		<System.Diagnostics.DebuggerStepThrough>
-		Private Function InternalIsInRangeOf(source As Double, minimum As Double, maximum As Double) As Boolean
+		Private Function InternalIsInRangeOf(source As Double,
+											 minimum As Double,
+											 maximum As Double) As Boolean
 			Return (source >= minimum) AndAlso (source <= maximum)
 		End Function
 
@@ -661,7 +666,8 @@ Namespace Extensions
 
 
 		''' <summary>
-		''' Bestimmt, ob der Wert im Bereich der angegebenen <paramref name="min"/>- und <paramref name="max"/>-Werte liegt.
+		''' Bestimmt, ob der Wert im Bereich der angegebenen 
+		''' <paramref name="min"/>- und <paramref name="max"/>-Werte liegt.
 		''' </summary>
 		''' <param name="min">
 		''' Der Mindestwert des Bereichs.
@@ -670,7 +676,7 @@ Namespace Extensions
 		''' Der Maximalwert des Bereichs.
 		''' </param>
 		''' <returns>
-		''' <see langword="True"/> wenn der Wert im Bereich liegt,  andernfalls <see langword="False"/>.
+		''' <see langword="True"/> wenn der Wert im Bereich liegt, andernfalls <see langword="False"/>.
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>

@@ -21,10 +21,6 @@ Namespace Extensions
 	Public Module GenericExtensions
 
 
-		Private Const ARGUMENT_OUT_OF_RANGE_EXCEPTION_MESSAGE As String =
-			"Der Wert des Argumentes {0} liegt ausserhalb des gültigen Bereiches."
-
-
 #Region "Die Elementanzahl eines Arrays ändern"
 
 		''' <summary>
@@ -36,16 +32,10 @@ Namespace Extensions
 		''' <returns>
 		''' Das in der Größe geänderte <see cref="Array"/>.
 		''' </returns>
-		''' <exception cref="ArgumentOutOfRangeException">
-		''' Wird ausgelöst wenn der Wert kleiner oder gleich 0 ist.
-		''' </exception>
 		<Diagnostics.DebuggerStepThrough>
 		<Runtime.CompilerServices.Extension>
 		Public Function Resize(Of T)(sender As T(),
 									 newSize As Integer) As T()
-			If newSize <= 0 Then
-				Throw New ArgumentOutOfRangeException(String.Format(ARGUMENT_OUT_OF_RANGE_EXCEPTION_MESSAGE, NameOf(newSize)))
-			End If
 			Dim preserveLength As Integer = Math.Min(sender.Length, newSize)
 			If preserveLength > 0 Then
 				Dim newArray As Array = Array.CreateInstance(sender.GetType.GetElementType, newSize)
@@ -135,7 +125,6 @@ Namespace Extensions
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
 		Public Function CountNonEmptyItems(sender As IEnumerable(Of String)) As Integer
-			'Return (From str As String In sender Where Not String.IsNullOrEmpty(str) AndAlso Not String.IsNullOrWhiteSpace(str)).Count
 			Dim result As Integer = 0
 			For Each str As String In sender
 				If Not String.IsNullOrEmpty(str) AndAlso Not String.IsNullOrWhiteSpace(str) Then

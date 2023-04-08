@@ -235,7 +235,7 @@ Public Class GenericExtensionsTest
 
 		Debug.Print("anfängliche Größe -> " & arr.Length)
 
-		For i As Integer = 1 To 5
+		For i As Integer = 0 To 5
 			Debug.Write("neue Größe " & var & " -> ")
 			arr = arr.Resize(var)
 			Debug.Print("" & arr.Length)
