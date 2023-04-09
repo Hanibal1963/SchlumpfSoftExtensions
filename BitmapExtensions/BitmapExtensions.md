@@ -89,5 +89,7 @@ ohne das enthaltene Bitmaps extern verlinkt werden müssen.
 
 ```vb
 Dim bm as New Bitmap("c:\Bild.bmp")
-dim code as String = bm.ToHtml
+Dim code as String = bm.ToHtml
+'oder
+Dim code as String = bm.ToHtml(50)
 ```
