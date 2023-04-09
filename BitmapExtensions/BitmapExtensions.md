@@ -91,5 +91,5 @@ ohne das enthaltene Bitmaps extern verlinkt werden müssen.
 Dim bm as New Bitmap("c:\Bild.bmp")
 Dim code as String = bm.ToHtml
 'oder
-Dim code as String = bm.ToHtml(50)
+Dim code as String = bm.ToHtml(50,"Text")
 ```
