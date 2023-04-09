@@ -5,6 +5,8 @@ Verschieden Erweiterungsmethoden für die Bitmapklasse.
 - [Zugeordentes Symbol ermitteln](BitmapExtensions.md#Zugeordentes-Symbol-ermitteln)
 - [Alle enthaltenen Symbole ermitteln](BitmapExtensions.md#Alle-enthaltenen-Symbole-ermitteln)
 - [Die Anzahl der enthaltenen Symbole ermitteln](BitmapExtensions.md#Die-Anzahl-der-enthaltenen-Symbole-ermitteln)
+- [Bitmap in Base64-Code umwandeln und zurück](BitmapExtensions.md#Bitmap-in-Base64-Code-umwandeln-und-zurück)
+- [Bitmap in Html-Code umwandeln](BitmapExtensions.md#Bitmap-in-Html-Code-umwandeln)
 
 
 ---
@@ -61,5 +63,33 @@ Diese Funktion ermittelt die nullbasierte Anzahl der in einer Datei enthaltenen 
 ```vb
 Dim file as String = "c:\file.ext"
 Dim bm As Bitmap = Nothing
-Dim index as Integer = bm.GetFileIcons(file) - 1
+Dim index as Integer = bm.GetFileIcons(file)
+```
+
+---
+
+### Bitmap in Base64-Code umwandeln und zurück
+
+Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück zum speichern in Textbasierten Dateien.
+
+```vb
+Dim bm as New Bitmap("c:\Bild.bmp")
+Dim code as String = bm.ToBase64
+PictureBox1.Image = bm.FromBase64(code)
+```
+
+
+---
+
+
+### Bitmap in Html-Code umwandeln
+
+Diese Funktion gibt den Html-Code für das Bitmap zurück zum einfügen in Html-Dateien 
+ohne das enthaltene Bitmaps extern verlinkt werden müssen.
+
+```vb
+Dim bm as New Bitmap("c:\Bild.bmp")
+Dim code as String = bm.ToHtml
+'oder
+Dim code as String = bm.ToHtml(50,"Text")
 ```
