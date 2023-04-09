@@ -1,14 +1,12 @@
-﻿'
+﻿Option Strict On
+Option Explicit On
+Option Infer On
+'
 '****************************************************************************************************************
 'BitmapExtensions.vb
 '(c) 2023 by Andreas Sauer
 '****************************************************************************************************************
 '
-
-
-Option Strict On
-Option Explicit On
-Option Infer On
 
 
 Namespace Extensions
@@ -18,6 +16,77 @@ Namespace Extensions
 	''' Enthält Erweiterungsfunktionen für die Klasse <seealso cref="System.Drawing.Bitmap"/> 
 	''' </summary>
 	Public Module BitmapExtensions
+
+		''' <summary>
+		''' Wandelt das Bitmap in Html-Code.
+		''' </summary>
+		''' <param name="RelSize">
+		''' Relative Größe des Bitmap in Prozent.
+		''' </param>
+		''' <returns>
+		''' Der erzeugte Html-Code oder leer wenn Bitmap Nothing ist.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function ToHtml(sender As System.Drawing.Bitmap, Optional RelSize As Integer = 100) As String
+			If IsNothing(sender) Then
+				Return ""
+				Exit Function
+			End If
+			Dim code As String = "<img width='{0}' height='{1}' src='data:image;base64,{2}' alt='' />"
+			'Base64 - Code erzeugen
+			Dim b64code As String = sender.ToBase64
+			'Bildgröße anpassen
+			Dim w As Integer = CInt(sender.Width / 100 * RelSize)
+			Dim h As Integer = CInt(sender.Height / 100 * RelSize)
+			'Ergebnis zurück
+			Return String.Format(code, CStr(w), CStr(h), b64code)
+		End Function
+
+
+		''' <summary>
+		''' Wandelt Base64-Code in ein Bitmap um.
+		''' </summary>
+		''' <param name="Base64Code">
+		''' Der Base64-Code.
+		''' </param>
+		''' <returns>
+		''' Das erzeugte Bitmap oder Nothing wenn der Parameter Bas64Code keinen wert enthält.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		<CodeAnalysis.SuppressMessage(
+		"Style", "IDE0060:Nicht verwendete Parameter entfernen",
+		Justification:="Parameter wird für Erweiterungsmethoden benötigt.")>
+		Public Function FromBase64(sender As System.Drawing.Bitmap, Base64Code As String) As System.Drawing.Bitmap
+			'Nothing zurück wenn der Parameter Base64Code keinen Wert enthält.
+			If String.IsNullOrEmpty(Base64Code) Then
+				Return Nothing
+				Exit Function
+			End If
+			Dim ic As New System.Drawing.ImageConverter
+			'String decodieren und in Byte-Array umwandeln
+			Dim bytes() As Byte = Convert.FromBase64String(Base64Code)
+			'Byte-Array in Image-Objekt umwandeln und das Image-Objekt zurückgeben 
+			Return CType(ic.ConvertFrom(bytes), System.Drawing.Bitmap)
+		End Function
+
+
+		''' <summary>
+		''' Wandelt ein Bitmap in Base64-Code.
+		''' </summary>
+		''' <returns>
+		''' Der erzeugte Base64-Code.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function ToBase64(sender As System.Drawing.Bitmap) As String
+			Dim ic As New System.Drawing.ImageConverter
+			'Bitmap in Byte-Array umwandeln
+			Dim bytes() As Byte = CType(ic.ConvertTo(sender, GetType(Byte())), Byte())
+			'Byte-Array in Base64-codierten String umwandeln	und Datenstring zurückgeben
+			Return Convert.ToBase64String(bytes, Base64FormattingOptions.InsertLineBreaks)
+		End Function
 
 
 		''' <summary>
