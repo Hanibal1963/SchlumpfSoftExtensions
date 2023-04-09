@@ -1,12 +1,14 @@
-﻿Option Strict On
-Option Explicit On
-Option Infer On
-'
+﻿'
 '****************************************************************************************************************
 'BitmapExtensions.vb
 '(c) 2023 by Andreas Sauer
 '****************************************************************************************************************
 '
+
+
+Option Strict On
+Option Explicit On
+Option Infer On
 
 
 Namespace Extensions
