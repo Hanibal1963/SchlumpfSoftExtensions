@@ -23,27 +23,24 @@ Namespace Extensions
 		''' <param name="RelSize">
 		''' Relative Größe des Bitmap in Prozent.
 		''' </param>
-		''' <param name="alt">
-		''' Alternativer Text.
-		''' </param>
 		''' <returns>
 		''' Der erzeugte Html-Code oder leer wenn Bitmap Nothing ist.
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function ToHtml(sender As System.Drawing.Bitmap, Optional RelSize As Integer = 100, Optional alt As String = "") As String
+		Public Function ToHtml(sender As System.Drawing.Bitmap, Optional RelSize As Integer = 100) As String
 			If IsNothing(sender) Then
 				Return ""
 				Exit Function
 			End If
-			Dim code As String = "<img width='{0}' height='{1}' src='data:image;base64,{2}' alt='{3}' />"
+			Dim code As String = "<img width='{0}' height='{1}' src='data:image;base64,{2}' alt='' />"
 			'Base64 - Code erzeugen
 			Dim b64code As String = sender.ToBase64
 			'Bildgröße anpassen
 			Dim w As Integer = CInt(sender.Width / 100 * RelSize)
 			Dim h As Integer = CInt(sender.Height / 100 * RelSize)
 			'Ergebnis zurück
-			Return String.Format(code, CStr(w), CStr(h), b64code, alt)
+			Return String.Format(code, CStr(w), CStr(h), b64code)
 		End Function
 
 

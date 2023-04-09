@@ -24,7 +24,7 @@ Public Class BitmapExtensionsPreviewDialog
 		PictureBox2.Image = bm
 		TextBox2.Text = bm.ToBase64
 		PictureBox3.Image = bm.FromBase64(TextBox2.Text)
-		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml(alt:=ext))
+		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml())
 	End Sub
 
 	Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -40,7 +40,7 @@ Public Class BitmapExtensionsPreviewDialog
 		PictureBox2.Image = bm
 		TextBox2.Text = bm.ToBase64
 		PictureBox3.Image = bm.FromBase64(TextBox2.Text)
-		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml(alt:=FolderBrowserDialog1.SelectedPath))
+		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml())
 	End Sub
 
 	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -59,7 +59,7 @@ Public Class BitmapExtensionsPreviewDialog
 		PictureBox2.Image = bm
 		TextBox2.Text = bm.ToBase64
 		PictureBox3.Image = bm.FromBase64(TextBox2.Text)
-		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml(alt:=file & " - Symbol 0"))
+		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml())
 	End Sub
 
 	Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
@@ -70,7 +70,7 @@ Public Class BitmapExtensionsPreviewDialog
 		PictureBox2.Image = bm
 		TextBox2.Text = bm.ToBase64
 		PictureBox3.Image = bm.FromBase64(TextBox2.Text)
-		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml(alt:=file & " - Symbol " & NumericUpDown1.Value.ToString))
+		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml())
 	End Sub
 
 
