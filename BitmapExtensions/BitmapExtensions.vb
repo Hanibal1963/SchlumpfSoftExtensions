@@ -176,6 +176,8 @@ Namespace Extensions
 				Case IconSizes.x32
 					'großes Symbol extrahieren wenn gefordert
 					Dim unused1 = NativeMethods.ExtractIconExW(File, Index, hIcon, Nothing, 1)
+											case else
+											
 			End Select
 			'Symbol extrahieren	und Ergebnis zurück
 			Return System.Drawing.Icon.FromHandle(hIcon).ToBitmap
