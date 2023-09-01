@@ -161,8 +161,8 @@ Namespace Extensions
 				Return Nothing
 				Exit Function
 			End If
-			'Ergebnis = Nothing wenn der Symbolindex < 0 und >= Anzahl der Symbol in der Datei ist
-			If Index < 0 Or Index >= GetFileIcons(sender, File) Then
+			'Ergebnis = Nothing wenn der Symbolindex < 0 oder >= Anzahl der Symbol in der Datei ist
+			If Index < 0 OrElse Index >= GetFileIcons(sender, File) Then
 				Return Nothing
 				Exit Function
 			End If
