@@ -36,7 +36,6 @@ Namespace Extensions
 		Public Function ToHtml(sender As System.Drawing.Bitmap, Optional RelSize As Integer = 100, Optional alt As String = "") As String
 			If IsNothing(sender) Then
 				Return ""
-				Exit Function
 			End If
 			Dim code As String = "<img width='{0}' height='{1}' src='data:image;base64,{2}' alt='{3}' />"
 			'Base64 - Code erzeugen
