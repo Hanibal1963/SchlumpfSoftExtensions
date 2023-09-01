@@ -1,23 +1,23 @@
-﻿## GenericExtensions
+﻿##  GenericExtensions
 
 Enthät verschiedene Erweiterungsmethoden für Arrays und Auflistungstypen.
 
-- [Die Elementanzahl eines Arrays ändern](GenericExtensions.md#die-elementanzahl-eines-arrays-ändern)
-- [Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren](GenericExtensions.md#Byte-oder-IEnumerableOf-Byte-in-String-Darstellung-konvertieren)
-- [Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln](GenericExtensions.md#Leere-oder-nicht-leere-Elemente-in-IEnumerableOf-String-ermitteln)
-- [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt-gesuchte-Werte-in-IEnumerableOf-String-ermitteln)
-- [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-eine-angegebene-Zeichenfolge-enthalten-in-IEnumerableOf-String-ermitteln)
-- [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-einem-Muster-entsprechen-in-IEnumerableOf-String-ermitteln)
-- [Elemente von IEnmerable(Of String) sortieren](GenericExtensions.md#Elemente-von-IEnmerableOf-String-sortieren)
-- [Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-einem-angegebenem-Muster-entsprechen)
-- [Elemente aus IEnumerable(Of String) entfernen die genau Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-einer-Zeichenfolge-entsprechen)
-- [Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-genau-einer-Zeichenfolge-entsprechen)
+-  [Die Elementanzahl eines Arrays ändern](GenericExtensions.md#die-elementanzahl-eines-arrays-ändern)
+-  [Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren](GenericExtensions.md#Byte-oder-IEnumerableOf-Byte-in-String-Darstellung-konvertieren)
+-  [Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln](GenericExtensions.md#Leere-oder-nicht-leere-Elemente-in-IEnumerableOf-String-ermitteln)
+-  [Exakt gesuchte Werte in IEnumerable(Of String) ermitteln](GenericExtensions.md#Exakt-gesuchte-Werte-in-IEnumerableOf-String-ermitteln)
+-  [Elemente die eine angegebene Zeichenfolge enthalten in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-eine-angegebene-Zeichenfolge-enthalten-in-IEnumerableOf-String-ermitteln)
+-  [Elemente die einem Muster entsprechen in IEnumerableOf String ermitteln](GenericExtensions.md#Elemente-die-einem-Muster-entsprechen-in-IEnumerableOf-String-ermitteln)
+-  [Elemente von IEnmerable(Of String) sortieren](GenericExtensions.md#Elemente-von-IEnmerableOf-String-sortieren)
+-  [Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-einem-angegebenem-Muster-entsprechen)
+-  [Elemente aus IEnumerable(Of String) entfernen die genau Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-einer-Zeichenfolge-entsprechen)
+-  [Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen](GenericExtensions.md#Elemente-aus-IEnumerableOf-String-entfernen-die-genau-einer-Zeichenfolge-entsprechen)
 
 
 ---
 
 
-### Die Elementanzahl eines Arrays ändern
+###  Die Elementanzahl eines Arrays ändern
 
 Mit dieser Funktion wird die Elementanzahl eines Array neu definiert.
 
@@ -29,7 +29,7 @@ MyArray = MyArray.Resize(y)
 ---
 
 
-### Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren
+###  Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren
 
 Mit diesen beiden Funktionen wird der Inhalt in einen String 
 (unter Angabe der Codierung) konvertiert.
@@ -47,7 +47,7 @@ Console.WriteLine(Var2.ToString(Encoding.ASCII))
 ---
 
 
-### Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln
+###  Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln
 
 
 Die folgenden beiden Methoden ermitteln die Anzahl leerer oder nicht leerer Elemente:
@@ -66,7 +66,7 @@ Console.WriteLine("Anzahl der nicht leeren Elemente: " & var.CountNonEmptyItems)
 ---
 
 
-### Exakt gesuchte Werte in IEnumerable(Of String) ermitteln
+###  Exakt gesuchte Werte in IEnumerable(Of String) ermitteln
 
 Die folgende Methode findet exakt die gesuchten Werte in der Auflistung unter Einhaltung 
 der angegebenen Sortierregeln.
@@ -90,7 +90,7 @@ Debug.Print("Es wurde ""{0}"" gefunden.", result)
 ---
 
 
-### Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
+###  Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
 
 Die folgende Methode findet die Werte die die angegebene Zeichenfolge unter Einhaltung 
 der angegebenen Sortierregeln enthalten.
@@ -115,7 +115,7 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 ---
 
 
-### Elemente die einem Muster entsprechen in IEnumerable(Of String) ermitteln
+###  Elemente die einem Muster entsprechen in IEnumerable(Of String) ermitteln
 
 Die folgende Methode führt eine Mustersuche durch und findet 
 die Werte die dem angegebenem Muster entsprechen.
@@ -140,7 +140,7 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 ---
 
 
-### Elemente von IEnmerable(Of String) sortieren
+###  Elemente von IEnmerable(Of String) sortieren
 
 Mit dieser Funktion werden die Elemente der Auflistung nach der Bubble-Sort-Methode sortiert.
 
@@ -158,7 +158,7 @@ Debug.Print(String.Join(", ", var.BubbleSort))
 ---
 
 
-### Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen
+###  Elemente aus IEnumerable(Of String) entfernen die einem angegebenem Muster entsprechen
 
 Die folgende Funktion entfernt alle Werte die einem angegebenem Muster entsprechen.
 
@@ -179,7 +179,7 @@ Debug.Print(String.Join(", ", var.RemoveByLike("*" & var.Last & "*", False)))
 ---
 
 
-### Elemente aus IEnumerable(Of String) entfernen die einer Zeichenfolge entsprechen
+###  Elemente aus IEnumerable(Of String) entfernen die einer Zeichenfolge entsprechen
 
 Die folgende Funktion entfernt alle Werte die einer angegebenen Zeichenfolge entsprechen.
 
@@ -201,7 +201,7 @@ Debug.Print(String.Join(", ", var.RemoveByContains(var.Last, False)))
 ---
 
 
-### Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen
+###  Elemente aus IEnumerable(Of String) entfernen die genau einer Zeichenfolge entsprechen
 
 Die folgende Funktion entfern alle Elemente die genau der angegebenen Zeichenfolge entsprechen.
 
