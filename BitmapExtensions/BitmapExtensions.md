@@ -2,11 +2,11 @@
 
 Verschieden Erweiterungsmethoden für die Bitmapklasse.
 
--  [Zugeordentes Symbol ermitteln](BitmapExtensions.md#Zugeordentes-Symbol-ermitteln)
--  [Alle enthaltenen Symbole ermitteln](BitmapExtensions.md#Alle-enthaltenen-Symbole-ermitteln)
--  [Die Anzahl der enthaltenen Symbole ermitteln](BitmapExtensions.md#Die-Anzahl-der-enthaltenen-Symbole-ermitteln)
--  [Bitmap in Base64-Code umwandeln und zurück](BitmapExtensions.md#Bitmap-in-Base64-Code-umwandeln-und-zurück)
--  [Bitmap in Html-Code umwandeln](BitmapExtensions.md#Bitmap-in-Html-Code-umwandeln)
+- [Zugeordentes Symbol ermitteln](BitmapExtensions.md#Zugeordentes-Symbol-ermitteln)
+- [Alle enthaltenen Symbole ermitteln](BitmapExtensions.md#Alle-enthaltenen-Symbole-ermitteln)
+- [Die Anzahl der enthaltenen Symbole ermitteln](BitmapExtensions.md#Die-Anzahl-der-enthaltenen-Symbole-ermitteln)
+- [Bitmap in Base64-Code umwandeln und zurück](BitmapExtensions.md#Bitmap-in-Base64-Code-umwandeln-und-zurück)
+- [Bitmap in Html-Code umwandeln](BitmapExtensions.md#Bitmap-in-Html-Code-umwandeln)
 
 
 ---
