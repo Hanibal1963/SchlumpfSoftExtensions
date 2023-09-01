@@ -265,6 +265,7 @@ Namespace Extensions
 			<Runtime.InteropServices.DllImport("User32.dll", EntryPoint:="DestroyIcon")>
 			Public Shared Function DestroyIcon(
 											  hIcon As IntPtr) As Integer
+													'API Definition
 			End Function
 
 
@@ -301,6 +302,7 @@ Namespace Extensions
 				ByRef phiconLarge As IntPtr,
 				ByRef phiconSmall As IntPtr,
 				nIcons As UInteger) As UInteger
+													'API Definition
 			End Function
 
 
@@ -336,6 +338,7 @@ Namespace Extensions
 				ByRef psfi As SHFILEINFOW,
 				cbFileInfo As Integer,
 				uFlags As Integer) As Integer
+													'API Definition
 			End Function
 
 
