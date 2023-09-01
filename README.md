@@ -1,4 +1,4 @@
-#  SchlumpfSoft Extensions
+# SchlumpfSoft Extensions
 
 Eine Sammlung verschiedener Erweiterungsmodulvorlagen
 
