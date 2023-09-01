@@ -1,4 +1,4 @@
-## BitmapExtensions
+##  BitmapExtensions
 
 Verschieden Erweiterungsmethoden für die Bitmapklasse.
 
@@ -40,7 +40,7 @@ PictureBox2.Image = bm.FromFilePathOrExt(folder, IconSizes.x32)
 ---
 
 
-### Alle enthaltenen Symbole ermitteln
+###  Alle enthaltenen Symbole ermitteln
 
 Diese Funktion gibt alle in einer Datei enthaltenen Symbole zurück.
 
@@ -56,7 +56,7 @@ PictureBox2.Image = bm.ExtractIcon(file, index, IconSizes.x32)
 ---
 
 
-### Die Anzahl der enthaltenen Symbole ermitteln
+###  Die Anzahl der enthaltenen Symbole ermitteln
 
 Diese Funktion ermittelt die nullbasierte Anzahl der in einer Datei enthaltenen Symbole.
 
@@ -68,7 +68,7 @@ Dim index as Integer = bm.GetFileIcons(file)
 
 ---
 
-### Bitmap in Base64-Code umwandeln und zurück
+###  Bitmap in Base64-Code umwandeln und zurück
 
 Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück zum speichern in Textbasierten Dateien.
 
@@ -82,7 +82,7 @@ PictureBox1.Image = bm.FromBase64(code)
 ---
 
 
-### Bitmap in Html-Code umwandeln
+###  Bitmap in Html-Code umwandeln
 
 Diese Funktion gibt den Html-Code für das Bitmap zurück zum einfügen in Html-Dateien 
 ohne das enthaltene Bitmaps extern verlinkt werden müssen.
