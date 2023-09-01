@@ -1,5 +1,7 @@
 # SchlumpfSoft Extensions
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/03298361cacc4c798807c4e268c6cf48)](https://app.codacy.com/gh/Hanibal1963/SchlumpfSoftExtensions?utm_source=github.com&utm_medium=referral&utm_content=Hanibal1963/SchlumpfSoftExtensions&utm_campaign=Badge_Grade)
+
 Eine Sammlung verschiedener Erweiterungsmodulvorlagen
 
 Die Anregung für die Vorlagen stammen aus dem etwas älteren 
