@@ -70,7 +70,7 @@ Dim index as Integer = bm.GetFileIcons(file)
 
 ## Bitmap in Base64-Code umwandeln und zurück
 
-Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück   
+Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück  
 zum speichern in Textbasierten Dateien.
 
 ```vb
@@ -85,8 +85,9 @@ PictureBox1.Image = bm.FromBase64(code)
 
 ## Bitmap in Html-Code umwandeln
 
-Diese Funktion gibt den Html-Code für das Bitmap zurück zum einfügen in Html-Dateien 
-ohne das enthaltene Bitmaps extern verlinkt werden müssen.
+Diese Funktion gibt den Html-Code für das Bitmap zurück  
+zum einfügen in Html-Dateien ohne das enthaltene Bitmaps  
+extern verlinkt werden müssen.
 
 ```vb
 Dim bm as New Bitmap("c:\Bild.bmp")
