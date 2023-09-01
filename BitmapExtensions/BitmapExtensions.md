@@ -1,4 +1,4 @@
-##  BitmapExtensions
+## BitmapExtensions
 
 Verschieden Erweiterungsmethoden für die Bitmapklasse.
 
@@ -12,7 +12,7 @@ Verschieden Erweiterungsmethoden für die Bitmapklasse.
 ---
 
 
-###  Zugeordentes Symbol ermitteln
+### Zugeordentes Symbol ermitteln
 
 
 Diese Funktion gibt das Symbol zurück welches einer Datei, eines Ordners oder einer Dateierweiteung zugeordnet ist.
