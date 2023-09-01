@@ -8,7 +8,6 @@ Verschieden Erweiterungsmethoden für die Bitmapklasse.
 - [Bitmap in Base64-Code umwandeln und zurück](BitmapExtensions.md#Bitmap-in-Base64-Code-umwandeln-und-zurück)
 - [Bitmap in Html-Code umwandeln](BitmapExtensions.md#Bitmap-in-Html-Code-umwandeln)
 
-
 ---
 
 
@@ -71,7 +70,7 @@ Dim index as Integer = bm.GetFileIcons(file)
 
 ## Bitmap in Base64-Code umwandeln und zurück
 
-Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück 
+Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück   
 zum speichern in Textbasierten Dateien.
 
 ```vb
