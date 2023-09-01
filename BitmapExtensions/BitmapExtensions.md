@@ -58,7 +58,8 @@ PictureBox2.Image = bm.ExtractIcon(file, index, IconSizes.x32)
 
 ## Die Anzahl der enthaltenen Symbole ermitteln
 
-Diese Funktion ermittelt die nullbasierte Anzahl der in einer Datei enthaltenen Symbole.
+Diese Funktion ermittelt die nullbasierte Anzahl der in einer Datei 
+enthaltenen Symbole.
 
 ```vb
 Dim file as String = "c:\file.ext"
@@ -70,7 +71,8 @@ Dim index as Integer = bm.GetFileIcons(file)
 
 ## Bitmap in Base64-Code umwandeln und zurück
 
-Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück zum speichern in Textbasierten Dateien.
+Diese beiden Funktionen wandel das Bitmap in Base64-Code und zurück 
+zum speichern in Textbasierten Dateien.
 
 ```vb
 Dim bm as New Bitmap("c:\Bild.bmp")
