@@ -31,8 +31,7 @@ MyArray = MyArray.Resize(y)
 
 ## Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren
 
-Mit diesen beiden Funktionen wird der Inhalt in einen String  
-(unter Angabe der Codierung) konvertiert.
+Mit diesen beiden Funktionen wird der Inhalt in einen String  (unter Angabe der Codierung) konvertiert.
 
 ```vb
 Dim Var1() as Byte = {84, 101, 115, 116}
@@ -49,8 +48,7 @@ Console.WriteLine(Var2.ToString(Encoding.ASCII))
 
 ## Leere oder nicht leere Elemente in IEnumerable(Of String) ermitteln
 
-Die folgenden beiden Methoden ermitteln die Anzahl  
-leerer oder nicht leerer Elemente:
+Die folgenden beiden Methoden ermitteln die Anzahl  leerer oder nicht leerer Elemente:
 
 
 ```vb
@@ -68,8 +66,7 @@ Console.WriteLine("Anzahl der nicht leeren Elemente: " & var.CountNonEmptyItems)
 
 ## Exakt gesuchte Werte in IEnumerable(Of String) ermitteln
 
-Die folgende Methode findet exakt die gesuchten Werte in der Auflistung  
-unter Einhaltung der angegebenen Sortierregeln.
+Die folgende Methode findet exakt die gesuchten Werte in der Auflistung  unter Einhaltung der angegebenen Sortierregeln.
 
 
 ```vb
@@ -93,8 +90,7 @@ Debug.Print("Es wurde ""{0}"" gefunden.", result)
 
 ## Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
 
-Die folgende Methode findet die Werte die die angegebene Zeichenfolge  
-unter Einhaltung der angegebenen Sortierregeln enthalten.
+Die folgende Methode findet die Werte die die angegebene Zeichenfolge  unter Einhaltung der angegebenen Sortierregeln enthalten.
 
 
 ```vb
@@ -119,8 +115,7 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 ## Elemente die einem Muster entsprechen in IEnumerable(Of String) ermitteln
 
-Die folgende Methode führt eine Mustersuche durch und findet  
-die Werte die dem angegebenem Muster entsprechen.
+Die folgende Methode führt eine Mustersuche durch und findet  die Werte die dem angegebenem Muster entsprechen.
 
 
 ```vb
@@ -145,8 +140,7 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 ## Elemente von IEnmerable(Of String) sortieren
 
-Mit dieser Funktion werden die Elemente der Auflistung  
-nach der Bubble-Sort-Methode sortiert.
+Mit dieser Funktion werden die Elemente der Auflistung  nach der Bubble-Sort-Methode sortiert.
 
 ```vb
 Dim var As IEnumerable(Of String) = {"10", "333", "2", "45"}
