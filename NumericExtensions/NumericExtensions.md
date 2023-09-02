@@ -1,9 +1,7 @@
-﻿
-## NumericExtensions
+﻿# NumericExtensions
 
 Diese Vorlage enthält benutzerdefinierte Erweiterungsmethoden zur Verwendung mit den 
 Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Double.
-
 
 ---
 
@@ -26,7 +24,7 @@ Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Doub
 ---
 
 
-### Prozentsatz eines Wertes von einem Gesamtwert berechnen
+## Prozentsatz eines Wertes von einem Gesamtwert berechnen
  
 Die folgenden Funktionen geben den Prozentsatz eines Wertes von dem Parameterwert zurück.
 
@@ -45,7 +43,7 @@ Die folgenden Funktionen geben den Prozentsatz eines Wertes von dem Parameterwer
 ---
 
 
-### Den Bruchteil eines Wertes berechnen
+## Den Bruchteil eines Wertes berechnen
 
 Die folgenden Funktionen geben den Bruchteil (Prozentsatz) eines Wertes	zurück.
 
@@ -64,7 +62,7 @@ Die folgenden Funktionen geben den Bruchteil (Prozentsatz) eines Wertes	zurück.
 ---
 
 
-### Bestimmen ob ein Wert positiv ist
+## Bestimmen ob ein Wert positiv ist
 
 Die folgenden Funktionen geben True zurück wenn der Wert positiv ist.
 
@@ -81,7 +79,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert positiv ist.
 ---
 
 
-### Bestimmen ob der Wert negativ ist
+## Bestimmen ob der Wert negativ ist
 
 Die folgenden Funktionen geben True zurück wenn der Wert negativ ist.
 
@@ -97,7 +95,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert negativ ist.
 ---
 
 
-### Bestimmen ob der Wert eine Primzahl ist
+## Bestimmen ob der Wert eine Primzahl ist
 
 Die folgenden Funktionen geben True zurück wenn der Wert ein Primzahl ist.
 
@@ -112,7 +110,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert ein Primzahl ist.
 ---
 
 
-### Bestimmen ob ein Wert durch einen angegebenen Wert ohne Rest teilbar ist
+## Bestimmen ob ein Wert durch einen angegebenen Wert ohne Rest teilbar ist
 
 Die folgenden Funktionen geben True zurück wenn der Wert ohne Rest 
 durch den angegebenen Wert teilbar ist.
@@ -132,7 +130,7 @@ durch den angegebenen Wert teilbar ist.
 ---
 
 
-### Bestimmen ob ein angegebener Wert ein vielfaches vom Wert ist
+## Bestimmen ob ein angegebener Wert ein vielfaches vom Wert ist
 
 Die folgenden Funktionen geben True zurück wenn der angegebene Wert 
 ein vielfaches vom Wert ist.
@@ -152,7 +150,7 @@ ein vielfaches vom Wert ist.
 ---
 
 
-### Bestimmen ob ein Wert im Bereich von Minimum und Maximum liegt.
+## Bestimmen ob ein Wert im Bereich von Minimum und Maximum liegt.
 
 Die folgenden Funktionen geben True zurück wenn der Wert im Bereich
 eines Minimalwertes und eines Maximalwertes liegt.
@@ -172,7 +170,7 @@ eines Minimalwertes und eines Maximalwertes liegt.
 ---
 
 
-### Die Differenz zwischen dem Wert und einem angegebenen Wert bestimmen
+## Die Differenz zwischen dem Wert und einem angegebenen Wert bestimmen
 
 Die folgenden Funktionen ermitteln die Differenz zwischen dem Wert und 
 einem angegebenen Wert.
@@ -192,7 +190,7 @@ einem angegebenen Wert.
 ---
 
 
-### Den Wert in die Hexadezimale Darstellung für Visual Basic konvertieren
+## Den Wert in die Hexadezimale Darstellung für Visual Basic konvertieren
 
 Die folgenden Funktionen geben einen String zurück der die Headezimale Darstellung
 des Wertes wiedergibt.
@@ -207,7 +205,7 @@ des Wertes wiedergibt.
 
 ---
 
-### Den Wert in die Hexadezimale Darstellung für C# konvertieren
+## Den Wert in die Hexadezimale Darstellung für C# konvertieren
 
 Die folgenden Funktionen geben einen String zurück der die Headezimale Darstellung
 des Wertes wiedergibt.
@@ -223,7 +221,7 @@ des Wertes wiedergibt.
 ---
 
 
-### Den Wert in Abhängigkeit von der Genauigkeit und der Kultur formatieren
+## Den Wert in Abhängigkeit von der Genauigkeit und der Kultur formatieren
 
 Die folgenden Funktionen geben einen String zurück der den Wert in Abhängigkeit 
 von der angegebenen Kultur mit einer angegebenen Genauigkeit der Dezimalstelle darstellt.
