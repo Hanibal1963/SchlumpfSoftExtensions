@@ -76,7 +76,8 @@ unter Einhaltung der angegebenen Sortierregeln.
 Dim var As IEnumerable(Of String) = {"Hello", "Welt", "!!", "a", "b", "c", "welt"}
 Dim result As String
 
-Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & var.Last & """ gesucht ..." & vbCrLf)
+Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ &
+var.Last & """ gesucht ..." & vbCrLf)
 
 Debug.Print("Groß und Kleinschreibung wird ignoriert:")
 result = String.Join(" ,", var.FindExact(var.Last, StringComparison.OrdinalIgnoreCase))
@@ -92,15 +93,16 @@ Debug.Print("Es wurde ""{0}"" gefunden.", result)
 
 ## Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
 
-Die folgende Methode findet die Werte die die angegebene Zeichenfolge unter Einhaltung  
-der angegebenen Sortierregeln enthalten.
+Die folgende Methode findet die Werte die die angegebene Zeichenfolge  
+unter Einhaltung der angegebenen Sortierregeln enthalten.
 
 
 ```vb
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
 Dim result As String
 
-Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & var.Last & """ gesucht ..." & vbCrLf)
+Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ &
+var.Last & """ gesucht ..." & vbCrLf)
 
 Debug.Print("Groß und Kleinschreibung wird ignoriert:")
 result = String.Join(" ,", var.FindByContains(var.Last, True))
@@ -125,7 +127,8 @@ die Werte die dem angegebenem Muster entsprechen.
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!", "a", "b", "c", "welt"}
 Dim result As String
 
-Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & "*" & var.Last & "*" & """ gesucht ..." & vbCrLf)
+Debug.Print("Es wird in der Variablen " & var.ToString & " ( ) nach dem Begriff """ & "*" &
+var.Last & "*" & """ gesucht ..." & vbCrLf)
 
 Debug.Print("Groß und Kleinschreibung wird ignoriert:")
 result = String.Join(" ,", var.FindByLike("*" & var.Last & "*", True))
@@ -167,7 +170,8 @@ Die folgende Funktion entfernt alle Werte die einem angegebenem Muster entsprech
 Debug.Print("*** IEnumerable(Of String).RemoveByLike() Funktionstest ***" & vbCrLf)
 
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
-Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", "*" & var.Last & "*", var.ToString)
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", "*" &
+var.Last & "*", var.ToString)
 Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
 Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
@@ -188,7 +192,8 @@ Die folgende Funktion entfernt alle Werte die einer angegebenen Zeichenfolge ent
 Debug.Print("*** IEnumerable(Of String).RemoveByContains() Funktionstest ***" & vbCrLf)
 
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
-Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.",
+var.Last, var.ToString)
 Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
 Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
@@ -210,7 +215,8 @@ Die folgende Funktion entfern alle Elemente die genau der angegebenen Zeichenfol
 Debug.Print("*** IEnumerableIEnumerable(Of String).RemoveExact() Funktionstest ***" & vbCrLf)
 
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
-Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.",
+var.Last, var.ToString)
 Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
 Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
