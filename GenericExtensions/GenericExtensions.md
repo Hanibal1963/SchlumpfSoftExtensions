@@ -204,8 +204,7 @@ Die folgende Funktion entfern alle Elemente die genau der angegebenen Zeichenfol
 Debug.Print("*** IEnumerableIEnumerable(Of String).RemoveExact() Funktionstest ***" & vbCrLf)
 
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
-Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.",
-var.Last, var.ToString)
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
 Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
 Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
