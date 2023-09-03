@@ -5,24 +5,21 @@ Datentypen Int16, UInt16, Int32, UInt32, Int64, UInt64, Decimal, Single und Doub
 
 ---
 
-
 ## Die folgenden Funktionen sind vorhanden:
 
--  [Prozentsatz eines Wertes von einem Gesamtwert berechnen](NumericExtensions.md#Prozentsatz-eines-Wertes-von-einem-Gesamtwert-berechnen)
--  [Den Bruchteil eines Wertes berechnen](NumericExtensions.md#Den-Bruchteil-eines-Wertes-berechnen)
--  [Bestimmen ob ein Wert positiv ist](NumericExtensions.md#Bestimmen-ob-ein-Wert-positiv-ist)
--  [Bestimmen ob der Wert negativ ist](NumericExtensions.md#Bestimmen-ob-der-Wert-negativ-ist)
--  [Bestimmen ob der Wert eine Primzahl ist](NumericExtensions.md#Bestimmen-ob-der-Wert-eine-Primzahl-ist)
--  [Bestimmen ob ein Wert durch einen angegebenen Wert ohne Rest teilbar ist](NumericExtensions.md#Bestimmen-ob-ein-Wert-durch-einen-angegebenen-Wert-ohne-Rest-teilbar-ist)
--  [Bestimmen ob ein angegebener Wert ein vielfaches vom Wert ist](NumericExtensions.md#Bestimmen-ob-ein-angegebener-Wert-ein-vielfaches-vom-Wert-ist)
--  [Die Differenz zwischen dem Wert und einem angegebenen Wert bestimmen](NumericExtensions.md#Die-Differenz-zwischen-dem-Wert-und-einem-angegebenen-Wert-bestimmen)
--  [Den Wert in die Hexadezimale Darstellung für Visual Basic konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-Visual-Basic-konvertieren)
--  [Den Wert in die Hexadezimale Darstellung für C# konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-C-konvertieren)
--  [Den Wert in Abhängigkeit von der Genauigkeit und der Kultur formatieren](NumericExtensions.md#Den-Wert-in-Abhängigkeit-von-der-Genauigkeit-und-der-Kultur-formatieren)
-
+- [Prozentsatz eines Wertes von einem Gesamtwert berechnen](NumericExtensions.md#Prozentsatz-eines-Wertes-von-einem-Gesamtwert-berechnen)
+- [Den Bruchteil eines Wertes berechnen](NumericExtensions.md#Den-Bruchteil-eines-Wertes-berechnen)
+- [Bestimmen ob ein Wert positiv ist](NumericExtensions.md#Bestimmen-ob-ein-Wert-positiv-ist)
+- [Bestimmen ob der Wert negativ ist](NumericExtensions.md#Bestimmen-ob-der-Wert-negativ-ist)
+- [Bestimmen ob der Wert eine Primzahl ist](NumericExtensions.md#Bestimmen-ob-der-Wert-eine-Primzahl-ist)
+- [Bestimmen ob ein Wert durch einen angegebenen Wert ohne Rest teilbar ist](NumericExtensions.md#Bestimmen-ob-ein-Wert-durch-einen-angegebenen-Wert-ohne-Rest-teilbar-ist)
+- [Bestimmen ob ein angegebener Wert ein vielfaches vom Wert ist](NumericExtensions.md#Bestimmen-ob-ein-angegebener-Wert-ein-vielfaches-vom-Wert-ist)
+- [Die Differenz zwischen dem Wert und einem angegebenen Wert bestimmen](NumericExtensions.md#Die-Differenz-zwischen-dem-Wert-und-einem-angegebenen-Wert-bestimmen)
+- [Den Wert in die Hexadezimale Darstellung für Visual Basic konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-Visual-Basic-konvertieren)
+- [Den Wert in die Hexadezimale Darstellung für C# konvertieren](NumericExtensions.md#Den-Wert-in-die-Hexadezimale-Darstellung-für-C-konvertieren)
+- [Den Wert in Abhängigkeit von der Genauigkeit und der Kultur formatieren](NumericExtensions.md#Den-Wert-in-Abhängigkeit-von-der-Genauigkeit-und-der-Kultur-formatieren)
 
 ---
-
 
 ## Prozentsatz eines Wertes von einem Gesamtwert berechnen
  
@@ -39,9 +36,7 @@ Die folgenden Funktionen geben den Prozentsatz eines Wertes von dem Parameterwer
  Single.PercentageOf(Double) As Double
  Double.PercentageOf(Double) As Double
 ```
-
 ---
-
 
 ## Den Bruchteil eines Wertes berechnen
 
@@ -58,9 +53,7 @@ Die folgenden Funktionen geben den Bruchteil (Prozentsatz) eines Wertes	zurück.
  Single.FractionBy(Double) As Double
  Double.FractionBy(Of Double) As Double
 ```
-
 ---
-
 
 ## Bestimmen ob ein Wert positiv ist
 
@@ -74,10 +67,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert positiv ist.
  Single.IsPositive() As Boolean
  Double.IsPositive() As Boolean
 ```
-
-
 ---
-
 
 ## Bestimmen ob der Wert negativ ist
 
@@ -91,9 +81,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert negativ ist.
  Single.IsNegative() As Boolean
  Double.IsNegative() As Boolean
 ```
-
 ---
-
 
 ## Bestimmen ob der Wert eine Primzahl ist
 
@@ -106,9 +94,7 @@ Die folgenden Funktionen geben True zurück wenn der Wert ein Primzahl ist.
  UInteger.IsPrime() As Boolean
  Long.IsPrime() As Boolean
 ```
-
 ---
-
 
 ## Bestimmen ob ein Wert durch einen angegebenen Wert ohne Rest teilbar ist
 
@@ -126,9 +112,7 @@ durch den angegebenen Wert teilbar ist.
  Single.IsDivisibleBy(Double) As Boolean
  Double.IsDivisibleBy(Double) As Boolean
 ```
-
 ---
-
 
 ## Bestimmen ob ein angegebener Wert ein vielfaches vom Wert ist
 
@@ -146,9 +130,7 @@ ein vielfaches vom Wert ist.
  Single.IsMultipleBOf(Double) As Boolean
  Double.IsMultipleBOf(Double) As Boolean
 ```
-
 ---
-
 
 ## Bestimmen ob ein Wert im Bereich von Minimum und Maximum liegt.
 
@@ -166,9 +148,7 @@ eines Minimalwertes und eines Maximalwertes liegt.
  Single.IsInRangeOf(Double, Double) As Boolean
  Double.IsInRangeOf(Double, Double) As Boolean
 ```
-
 ---
-
 
 ## Die Differenz zwischen dem Wert und einem angegebenen Wert bestimmen
 
@@ -186,9 +166,7 @@ einem angegebenen Wert.
  Single.DifferenceOf(Double) As Double
  Double.DifferenceOf(Double) As Double
 ```
-
 ---
-
 
 ## Den Wert in die Hexadezimale Darstellung für Visual Basic konvertieren
 
@@ -202,7 +180,6 @@ des Wertes wiedergibt.
  UInteger.ToVBHex() As String
  Long.ToVBHex() As String
 ```
-
 ---
 
 ## Den Wert in die Hexadezimale Darstellung für C# konvertieren
@@ -217,9 +194,7 @@ des Wertes wiedergibt.
  UInteger.ToCSharpHex() As String
  Long.ToCSharpHex() As String
 ```
-
 ---
-
 
 ## Den Wert in Abhängigkeit von der Genauigkeit und der Kultur formatieren
 
@@ -237,4 +212,3 @@ von der angegebenen Kultur mit einer angegebenen Genauigkeit der Dezimalstelle d
  Single.Formatted(Opt: Integer, Opt: CultureInfo) As String
  Double.Formatted(Opt: Integer, Opt: CultureInfo) As String
 ```
-
