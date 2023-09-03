@@ -64,10 +64,7 @@ Namespace Extensions
 		Justification:="Parameter wird für Erweiterungsmethoden benötigt.")>
 		Public Function FromBase64(sender As System.Drawing.Bitmap, Base64Code As String) As System.Drawing.Bitmap
 			'Nothing zurück wenn der Parameter Base64Code keinen Wert enthält.
-			If String.IsNullOrEmpty(Base64Code) Then
-				Return Nothing
-				Exit Function
-			End If
+			If String.IsNullOrEmpty(Base64Code) Then Return Nothing
 			Dim ic As New System.Drawing.ImageConverter
 			'String decodieren und in Byte-Array umwandeln
 			Dim bytes() As Byte = Convert.FromBase64String(Base64Code)
