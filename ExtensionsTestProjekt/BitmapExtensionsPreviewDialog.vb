@@ -49,10 +49,7 @@ Public Class BitmapExtensionsPreviewDialog
 		Dim result As DialogResult = OpenFileDialog1.ShowDialog
 		If result = DialogResult.OK Then
 			file = OpenFileDialog1.FileName
-		Else
-			Exit Sub
-		End If
-		NumericUpDown1.Maximum = bm.GetFileIcons(file)
+				NumericUpDown1.Maximum = bm.GetFileIcons(file)
 		bm = bm.ExtractIcon(file, 0)
 		PictureBox1.Image = bm
 		bm = bm.ExtractIcon(file, 0, IconSizes.x32)
@@ -60,6 +57,8 @@ Public Class BitmapExtensionsPreviewDialog
 		TextBox2.Text = bm.ToBase64
 		PictureBox3.Image = bm.FromBase64(TextBox2.Text)
 		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml(alt:=file & " - Symbol 0"))
+		End If
+		
 	End Sub
 
 	Private Sub NumericUpDown1_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown1.ValueChanged
