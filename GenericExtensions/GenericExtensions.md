@@ -31,7 +31,9 @@ MyArray = MyArray.Resize(y)
 
 ## Byte() oder IEnumerable(Of Byte) in String-Darstellung konvertieren
 
-Mit diesen beiden Funktionen wird der Inhalt in einen String  (unter Angabe der Codierung) konvertiert.
+Mit diesen beiden Funktionen wird der Inhalt in einen String
+
+(unter Angabe der Codierung) konvertiert.
 
 ```vb
 Dim Var1() as Byte = {84, 101, 115, 116}
@@ -89,7 +91,9 @@ Debug.Print("Es wurde ""{0}"" gefunden.", result)
 
 ## Elemente die eine angegebene Zeichenfolge enthalten in IEnumerable(Of String) ermitteln
 
-Die folgende Methode findet die Werte die die angegebene Zeichenfolge  unter Einhaltung der angegebenen Sortierregeln enthalten.
+Die folgende Methode findet die Werte die die angegebene Zeichenfolge
+
+unter Einhaltung der angegebenen Sortierregeln enthalten.
 
 
 ```vb
@@ -137,7 +141,9 @@ Debug.Print("Es wurde ""{0}"" gefunden." & vbCrLf, result)
 
 ## Elemente von IEnmerable(Of String) sortieren
 
-Mit dieser Funktion werden die Elemente der Auflistung  nach der Bubble-Sort-Methode sortiert.
+Mit dieser Funktion werden die Elemente der Auflistung
+
+nach der Bubble-Sort-Methode sortiert.
 
 ```vb
 Dim var As IEnumerab le(Of String) = {"10", "333", "2", "45"}
@@ -182,7 +188,8 @@ Die folgende Funktion entfernt alle Werte die einer angegebenen Zeichenfolge ent
 Debug.Print("*** IEnumerable(Of String).RemoveByContains() Funktionstest ***" & vbCrLf)
 
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
-Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.",  
+var.Last, var.ToString)
 Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
 Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
@@ -201,10 +208,12 @@ Debug.Print(String.Join(", ", var.RemoveByContains(var.Last, False)))
 Die folgende Funktion entfern alle Elemente die genau der angegebenen Zeichenfolge entsprechen.
 
 ```vb
-Debug.Print("*** IEnumerableIEnumerable(Of String).RemoveExact() Funktionstest ***" & vbCrLf)
+Debug.Print("*** IEnumerableIEnumerable(Of String).RemoveExact() Funktionstest ***" &  
+vbCrLf)
 
 Dim var As IEnumerable(Of String) = {"Hallo Welt !!!", "a", "b", "c", "hallo"}
-Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.", var.Last, var.ToString)
+Debug.Print("Der Wert ""{0}"" soll aus der Auflistung ""{1}"" entfernt werden.",  
+var.Last, var.ToString)
 Debug.Print("Ursprünglicher Inhalt: ""{0}""" & vbCrLf, String.Join(" ,", var))
 
 Debug.Print("Groß- und Kleinschreibung wird ignoriert ...")
