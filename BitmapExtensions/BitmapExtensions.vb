@@ -64,10 +64,7 @@ Namespace Extensions
 		Justification:="Parameter wird für Erweiterungsmethoden benötigt.")>
 		Public Function FromBase64(sender As System.Drawing.Bitmap, Base64Code As String) As System.Drawing.Bitmap
 			'Nothing zurück wenn der Parameter Base64Code keinen Wert enthält.
-			If String.IsNullOrEmpty(Base64Code) Then
-				Return Nothing
-				Exit Function
-			End If
+			If String.IsNullOrEmpty(Base64Code) Then Return Nothing
 			Dim ic As New System.Drawing.ImageConverter
 			'String decodieren und in Byte-Array umwandeln
 			Dim bytes() As Byte = Convert.FromBase64String(Base64Code)
@@ -124,7 +121,7 @@ Namespace Extensions
 			If NativeMethods.SHGetFileInfoW(FilePathOrExt, 0, fi, Runtime.InteropServices.Marshal.SizeOf(fi),
 											NativeMethods.SHGFI_ICON Or fa) <> 0 Then
 				Return System.Drawing.Icon.FromHandle(fi.hIcon).ToBitmap
-				Dim unused = NativeMethods.DestroyIcon(fi.hIcon)
+				NativeMethods.DestroyIcon(fi.hIcon)
 				Exit Function
 			End If
 			Return Nothing
@@ -171,17 +168,17 @@ Namespace Extensions
 			Select Case Size
 				Case IconSizes.x16
 					'kleines Symbol extrahieren wenn gefordert
-					Dim unused = NativeMethods.ExtractIconExW(File, Index, Nothing, hIcon, 1)
+					NativeMethods.ExtractIconExW(File, Index, Nothing, hIcon, 1)
 				Case IconSizes.x32
 					'großes Symbol extrahieren wenn gefordert
-					Dim unused1 = NativeMethods.ExtractIconExW(File, Index, hIcon, Nothing, 1)
+					NativeMethods.ExtractIconExW(File, Index, hIcon, Nothing, 1)
 											case else
 											
 			End Select
 			'Symbol extrahieren	und Ergebnis zurück
 			Return System.Drawing.Icon.FromHandle(hIcon).ToBitmap
 			'Handle zerstören
-			Dim unused2 = NativeMethods.DestroyIcon(hIcon)
+			NativeMethods.DestroyIcon(hIcon)
 		End Function
 
 
