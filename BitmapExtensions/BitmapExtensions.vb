@@ -111,10 +111,7 @@ Namespace Extensions
 										  FilePathOrExt As String,
 										  Optional Size As IconSizes = IconSizes.x16) As System.Drawing.Bitmap
 			'Ergebnis = Nothing wenn Parameter Null oder leer ist
-			If String.IsNullOrEmpty(FilePathOrExt) Then
-				Return Nothing
-				Exit Function
-			End If
+			If String.IsNullOrEmpty(FilePathOrExt) Then Return Nothing
 			Dim fi As New NativeMethods.SHFILEINFOW
 			Dim fa = If(FilePathOrExt.StartsWith(".", True, Globalization.CultureInfo.CurrentCulture),
 				Size Or NativeMethods.SHGFI_USEFILEATTRIBUTES, Size)
