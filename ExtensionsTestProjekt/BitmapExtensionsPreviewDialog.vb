@@ -31,9 +31,7 @@ Public Class BitmapExtensionsPreviewDialog
 		Dim bm As Bitmap = Nothing
 		NumericUpDown1.Maximum = 0
 		Dim result As DialogResult = FolderBrowserDialog1.ShowDialog
-		If Not result = DialogResult.OK Then
-			Exit Sub
-		End If
+		If Not result = DialogResult.OK Then Exit Sub
 		bm = bm.FromFilePathOrExt(FolderBrowserDialog1.SelectedPath)
 		PictureBox1.Image = bm
 		bm = bm.FromFilePathOrExt(FolderBrowserDialog1.SelectedPath, IconSizes.x32)
