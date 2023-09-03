@@ -31,7 +31,7 @@ Public Class BitmapExtensionsPreviewDialog
 		Dim bm As Bitmap = Nothing
 		NumericUpDown1.Maximum = 0
 		Dim result As DialogResult = FolderBrowserDialog1.ShowDialog
-		If Not result = DialogResult.OK Then Exit Sub
+		If result = DialogResult.OK Then
 		bm = bm.FromFilePathOrExt(FolderBrowserDialog1.SelectedPath)
 		PictureBox1.Image = bm
 		bm = bm.FromFilePathOrExt(FolderBrowserDialog1.SelectedPath, IconSizes.x32)
@@ -39,6 +39,7 @@ Public Class BitmapExtensionsPreviewDialog
 		TextBox2.Text = bm.ToBase64
 		PictureBox3.Image = bm.FromBase64(TextBox2.Text)
 		WebBrowser1.DocumentText = HTMLCODE.Replace("<!--BITMAP-->", bm.ToHtml(alt:=FolderBrowserDialog1.SelectedPath))
+			end if
 	End Sub
 
 	Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
