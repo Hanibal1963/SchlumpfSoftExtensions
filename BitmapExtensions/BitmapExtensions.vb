@@ -380,26 +380,24 @@ Namespace Extensions
 
 		End Function
 
-		''' <summary>
-		''' Gibt das angeforderte Symbol zurück.
-		''' </summary>
-		''' <param name="File">
-		''' Vollständiger Pfad zu der Datei aus der das Symbol extrahiert werden soll.
-		''' </param>
-		''' <param name="Index">
-		''' Nullbasierter Index des Symbols welches extrahiert werden soll.
-		''' </param>
-		''' <param name="Size">
-		''' Größe des Symbols das extrahiert werden soll.
-		''' </param>
-		''' <returns>
-		''' Ein Bitmap welches das angeforderte Symbol darstellt oder Nothing.
-		''' </returns>
-		<System.Diagnostics.DebuggerStepThrough>
+        ''' <summary>
+        ''' Gibt das angeforderte Symbol inder angegebenen Größe als Bitmap zurück.
+        ''' </summary>
+        ''' <param name="File">
+        ''' Vollständiger Pfad zu der Datei aus der das Symbol extrahiert werden soll.
+        ''' </param>
+        ''' <param name="Index">
+        ''' Nullbasierter Index des Symbols welches extrahiert werden soll.
+        ''' </param>
+        ''' <param name="Size">
+        ''' Größe des Symbols das extrahiert werden soll.
+        ''' </param>
+        ''' <returns>
+        ''' Ein Bitmap welches das angeforderte Symbol darstellt oder Nothing.
+        ''' </returns>
+        <System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function ExtractIcon(sender As System.Drawing.Bitmap,
-									File As String, Index As Integer,
-									Optional Size As IconSizes = IconSizes.x16) As System.Drawing.Bitmap
+		Public Function ExtractIcon(sender As System.Drawing.Bitmap, File As String, Index As Integer, Size As IconSizes) As System.Drawing.Bitmap
 
 			'Ergebnis = Nothing wenn Parameter leer ist
 			If String.IsNullOrEmpty(File) Then
@@ -438,6 +436,26 @@ Namespace Extensions
 
 			'Handle zerstören
 			Dim unused = DestroyIcon(hIcon)
+
+		End Function
+
+		''' <summary>
+		''' Gibt das angeforderte Symbol als 16x16 Bitmap zurück.
+		''' </summary>
+		''' <param name="File">
+		''' Vollständiger Pfad zu der Datei aus der das Symbol extrahiert werden soll.
+		''' </param>
+		''' <param name="Index">
+		''' Nullbasierter Index des Symbols welches extrahiert werden soll.
+		''' </param>
+		''' <returns>
+		''' Ein Bitmap welches das angeforderte Symbol darstellt oder Nothing.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function ExtractIcon(sender As System.Drawing.Bitmap, File As String, Index As Integer) As System.Drawing.Bitmap
+
+			Return ExtractIcon(sender, File, Index, IconSizes.x16)
 
 		End Function
 
