@@ -167,10 +167,29 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function FindByContains(sender As IEnumerable(Of String), searchString As String, Optional ignoreCase As Boolean = False) As IEnumerable(Of String)
+		Public Function FindByContains(sender As IEnumerable(Of String), searchString As String, ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Dim result As IEnumerable(Of String)
 			result = From str As String In sender Where If(ignoreCase, str.ToLower.Contains(searchString.ToLower), str.Contains(searchString))
+			Return result
+
+		End Function
+
+		''' <summary>
+		''' Findet die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <param name="searchString">
+		''' Die Zeichenfolge, nach der gesucht werden soll.
+		''' </param>
+		''' <returns>
+		''' Die gefundenen Elemente als <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindByContains(sender As IEnumerable(Of String), searchString As String) As IEnumerable(Of String)
+
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender Where If(False, str.ToLower.Contains(searchString.ToLower), str.Contains(searchString))
 			Return result
 
 		End Function
@@ -190,10 +209,30 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function FindByLike(sender As IEnumerable(Of String), likePattern As String, Optional ignoreCase As Boolean = False) As IEnumerable(Of String)
+		Public Function FindByLike(sender As IEnumerable(Of String), likePattern As String, ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Dim result As IEnumerable(Of String)
 			result = From str As String In sender Where If(ignoreCase, str.ToLower Like likePattern.ToLower, str Like likePattern)
+			Return result
+
+		End Function
+
+		''' <summary>
+		''' Führt eine Zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> 
+		''' durch und gibt alle Übereinstimmungen zurück.
+		''' </summary>
+		''' <param name="likePattern">
+		''' Der mit dem <see langword="Like"/>-Operator zu verwendende Mustervergleich.
+		''' </param>
+		''' <returns>
+		''' Die gefundenen Elemente als <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function FindByLike(sender As IEnumerable(Of String), likePattern As String) As IEnumerable(Of String)
+
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender Where If(False, str.ToLower Like likePattern.ToLower, str Like likePattern)
 			Return result
 
 		End Function
@@ -273,10 +312,29 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveByContains(sender As IEnumerable(Of String), searchString As String, Optional ignoreCase As Boolean = True) As IEnumerable(Of String)
+		Public Function RemoveByContains(sender As IEnumerable(Of String), searchString As String, ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Dim result As IEnumerable(Of String)
 			result = From str As String In sender Where If(ignoreCase, Not str.ToLower.Contains(searchString.ToLower), Not str.Contains(searchString))
+			Return result
+
+		End Function
+
+		''' <summary>
+		''' Entfernt die Elemente, die die angegebene Zeichenfolge in der Quelle enthalten <see cref="IEnumerable(Of String)"/>.
+		''' </summary>
+		''' <param name="searchString">
+		''' Die Zeichenfolge, nach der gesucht werden soll.
+		''' </param>
+		''' <returns>
+		''' Die übrigen Elemente in <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveByContains(sender As IEnumerable(Of String), searchString As String) As IEnumerable(Of String)
+
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender Where If(False, Not str.ToLower.Contains(searchString.ToLower), Not str.Contains(searchString))
 			Return result
 
 		End Function
@@ -295,10 +353,29 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function RemoveByLike(sender As IEnumerable(Of String), likePattern As String, Optional ignoreCase As Boolean = True) As IEnumerable(Of String)
+		Public Function RemoveByLike(sender As IEnumerable(Of String), likePattern As String, ignoreCase As Boolean) As IEnumerable(Of String)
 
 			Dim result As IEnumerable(Of String)
 			result = From str As String In sender Where If(ignoreCase, Not str.ToLower Like likePattern.ToLower, Not str Like likePattern)
+			Return result
+
+		End Function
+
+		''' <summary>
+		''' Führt eine Zeichenkettenähnliche Mustersuche in der Quelle <see cref="IEnumerable(Of String)"/> durch und entfernt alle Übereinstimmungen.
+		''' </summary>
+		''' <param name="likePattern">
+		''' Der mit dem <see langword="Like"/>-Operator zu verwendende Mustervergleich.
+		''' </param>
+		''' <returns>
+		''' Die übrigen Elemente in <see cref="IEnumerable(Of String)"/>.
+		''' </returns>
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function RemoveByLike(sender As IEnumerable(Of String), likePattern As String) As IEnumerable(Of String)
+
+			Dim result As IEnumerable(Of String)
+			result = From str As String In sender Where If(False, Not str.ToLower Like likePattern.ToLower, Not str Like likePattern)
 			Return result
 
 		End Function
