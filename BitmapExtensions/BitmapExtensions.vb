@@ -41,7 +41,6 @@ Namespace Extensions
 
 #End Region
 
-
 #Region "Strukturdefinitionen"
 
 		''' <summary>
