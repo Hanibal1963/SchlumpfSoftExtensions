@@ -12,7 +12,6 @@ Imports ExtensionsTestProjekt.Extensions
 <TestClass()>
 Public Class NumericExtensionsTest
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "ToCSharpHex()"
 	''' </summary>
@@ -44,7 +43,6 @@ Public Class NumericExtensionsTest
 
 	End Sub
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "ToVBHex()"
 	''' </summary>
@@ -75,7 +73,6 @@ Public Class NumericExtensionsTest
 		Next i
 
 	End Sub
-
 
 	''' <summary>
 	''' Testmethode für die Funktion "DifferenceOf(Value as <see cref="Double"/>)"
@@ -112,7 +109,6 @@ Public Class NumericExtensionsTest
 
 	End Sub
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "IsInRangeOf(Value as <see cref="Double"/>)"
 	''' </summary>
@@ -147,7 +143,6 @@ Public Class NumericExtensionsTest
 		Next i
 
 	End Sub
-
 
 	''' <summary>
 	''' Testmethode für die Funktion "IsMultipleOf(Value as <see cref="Double"/>)"
@@ -185,7 +180,6 @@ Public Class NumericExtensionsTest
 
 	End Sub
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "IsDivisibleBy(Value as <see cref="Double"/>)"
 	''' </summary>
@@ -221,7 +215,6 @@ Public Class NumericExtensionsTest
 
 	End Sub
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "IsPrime()"
 	''' </summary>
@@ -252,7 +245,6 @@ Public Class NumericExtensionsTest
 		Next i
 
 	End Sub
-
 
 	''' <summary>
 	''' Testmethode für die Funktion "IsNegative()"
@@ -287,7 +279,6 @@ Public Class NumericExtensionsTest
 
 	End Sub
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "IsPositive()"
 	''' </summary>
@@ -319,7 +310,6 @@ Public Class NumericExtensionsTest
 		Next i
 
 	End Sub
-
 
 	''' <summary>
 	''' Testmethode für die Funktion "FractionBy(Value as <see cref="Double"/>)"
@@ -356,7 +346,6 @@ Public Class NumericExtensionsTest
 
 	End Sub
 
-
 	''' <summary>
 	''' Testmethode für die Funktion "PercentOf(Value as <see cref="Double"/>)"
 	''' </summary>
@@ -391,6 +380,5 @@ Public Class NumericExtensionsTest
 		Next i
 
 	End Sub
-
 
 End Class
