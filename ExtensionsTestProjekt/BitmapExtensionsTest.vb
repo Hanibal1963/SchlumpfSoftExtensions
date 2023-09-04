@@ -20,7 +20,7 @@ Public Class BitmapExtensionsTest
 
 
 		Dim pd As New BitmapExtensionsPreviewDialog
-		pd.ShowDialog
+		Dim unused = pd.ShowDialog
 
 
 	End Sub
