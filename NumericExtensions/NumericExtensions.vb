@@ -1000,7 +1000,7 @@ Namespace Extensions
 
 		''' <summary>
 		''' Formatiert einen Wert durch Platzieren von Punkten oder Kommas an den entsprechenden Positionen, 
-		''' abhängig von der angegebenen Kultur.
+		''' abhängig von der angegebenen Kultur mit der angegebenen Genauigkeit der Dezimalstellen.
 		''' </summary>
 		''' <param name="precision">
 		''' Die Genauigkeit der Dezimalstellen.
@@ -1013,81 +1013,147 @@ Namespace Extensions
 		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As Short, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As Short, culture As System.Globalization.CultureInfo, precision As Integer) As String
 
 			Return NumericExtensions.InternalFormatted(sender, precision, culture)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
+		''' <summary>
+		''' Formatiert einen Wert durch Platzieren von Punkten oder Kommas an den entsprechenden Positionen, 
+		''' abhängig von der angegebenen Kultur ohne Dezimalstellen.
+		''' </summary>
+		''' <param name="culture">
+		''' Das Kulturformat.
+		''' </param>
+		''' <returns>
+		''' Der formatierte Wert.
+		''' </returns>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As UShort, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
-			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+		Public Function Formatted(sender As Short, culture As System.Globalization.CultureInfo) As String
+
+			Return NumericExtensions.Formatted(sender, culture, 0)
+
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As Integer, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As UShort, culture As System.Globalization.CultureInfo, precision As Integer) As String
 
 			Return NumericExtensions.InternalFormatted(sender, precision, culture)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As UInteger, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As UShort, culture As System.Globalization.CultureInfo) As String
 
-			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+			Return NumericExtensions.Formatted(sender, culture, 0)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As Long, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As Integer, culture As System.Globalization.CultureInfo, precision As Integer) As String
 
 			Return NumericExtensions.InternalFormatted(sender, precision, culture)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As ULong, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As Integer, culture As System.Globalization.CultureInfo) As String
 
-			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+			Return NumericExtensions.Formatted(sender, culture, 0)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As Decimal, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As UInteger, culture As System.Globalization.CultureInfo, precision As Integer) As String
 
 			Return NumericExtensions.InternalFormatted(sender, precision, culture)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As Single, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As UInteger, culture As System.Globalization.CultureInfo) As String
 
-			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+			Return NumericExtensions.Formatted(sender, culture, 0)
 
 		End Function
 
-		''' <inheritdoc cref="Formatted(Short, Globalization.CultureInfo, Integer)"/>
 		<System.Diagnostics.DebuggerStepThrough>
 		<System.Runtime.CompilerServices.Extension>
-		Public Function Formatted(sender As Double, culture As System.Globalization.CultureInfo, Optional precision As Integer = 0) As String
+		Public Function Formatted(sender As Long, culture As System.Globalization.CultureInfo, precision As Integer) As String
 
 			Return NumericExtensions.InternalFormatted(sender, precision, culture)
 
 		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Long, culture As System.Globalization.CultureInfo) As String
+
+			Return NumericExtensions.Formatted(sender, culture, 0)
+
+		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Decimal, culture As System.Globalization.CultureInfo, precision As Integer) As String
+
+			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+
+		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Decimal, culture As System.Globalization.CultureInfo) As String
+
+			Return NumericExtensions.Formatted(sender, culture, 0)
+
+		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Double, culture As System.Globalization.CultureInfo, precision As Integer) As String
+
+			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+
+		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Double, culture As System.Globalization.CultureInfo) As String
+
+			Return NumericExtensions.Formatted(sender, culture, 0)
+
+		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Single, culture As System.Globalization.CultureInfo, precision As Integer) As String
+
+			Return NumericExtensions.InternalFormatted(sender, precision, culture)
+
+		End Function
+
+		<System.Diagnostics.DebuggerStepThrough>
+		<System.Runtime.CompilerServices.Extension>
+		Public Function Formatted(sender As Single, culture As System.Globalization.CultureInfo) As String
+
+			Return NumericExtensions.Formatted(sender, culture, 0)
+
+		End Function
+
+
+
+
+
+
 
 #End Region
 
