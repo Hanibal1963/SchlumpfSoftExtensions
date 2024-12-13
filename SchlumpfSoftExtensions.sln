@@ -27,6 +27,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GenericExtensions", "Generi
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BitmapExtensions", "BitmapExtensions\BitmapExtensions.vbproj", "{DDECA59F-8732-457B-901D-2973597A798B}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Wiki", "Wiki\Wiki.vbproj", "{EE678B96-F567-4581-B19A-8A9CD799D9DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{DDECA59F-8732-457B-901D-2973597A798B}.Release|arm64.Build.0 = Release|arm64
 		{DDECA59F-8732-457B-901D-2973597A798B}.Release|x86.ActiveCfg = Release|x86
 		{DDECA59F-8732-457B-901D-2973597A798B}.Release|x86.Build.0 = Release|x86
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Debug|arm64.ActiveCfg = Debug|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Debug|arm64.Build.0 = Debug|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Debug|x86.Build.0 = Debug|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Release|arm64.ActiveCfg = Release|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Release|arm64.Build.0 = Release|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Release|x86.ActiveCfg = Release|Any CPU
+		{EE678B96-F567-4581-B19A-8A9CD799D9DC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
